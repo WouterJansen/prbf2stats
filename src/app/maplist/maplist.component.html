@@ -1,0 +1,10 @@
+<h2>Maps</h2>
+<ul class="levels">
+  <li *ngFor="let level of levels">
+    <a routerLink="/maps/detail/{{level}}">
+      <span class="badge">{{level}}</span>
+
+    </a>
+  </li>
+</ul>
+

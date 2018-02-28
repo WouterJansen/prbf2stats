@@ -1,0 +1,60 @@
+<div *ngIf="level">
+  <h2>{{mapName}} details</h2>
+<table class="table">
+  <thead>
+  <tr>
+    <th scope="col"></th>
+    <th scope="col"># Played</th>
+    <th scope="col">Avg. Duration</th>
+    <th scope="col">Avg. Tickets Team 1</th>
+    <th scope="col">Avg. Tickets Team 2</th>
+    <th scope="col"># Wins Team 1</th>
+    <th scope="col"># Wins Team 2</th>
+    <th scope="col"># Draws</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr>
+    <th scope="row">{{mapName}}</th>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <th scope="row"></th>
+    <td>{{level.timesPlayed}}</td>
+    <td>{{level.averageDuration}}</td>
+    <td>{{level.averageTicketsTeam1}}</td>
+    <td>{{level.averageTicketsTeam2}}</td>
+    <td>{{level.winsTeam1}}</td>
+    <td>{{level.winsTeam2}}</td>
+    <td>{{level.draws}}</td>
+  </tr>
+  <tr>
+    <th scope="row">GameModes</th>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr *ngFor="let gamemode of level.gameModes">
+    <th>{{gamemode.name}}</th>
+    <td>{{gamemode.timesPlayed}}</td>
+    <td>{{gamemode.averageDuration}}</td>
+    <td>{{gamemode.averageTicketsTeam1}}</td>
+    <td>{{gamemode.averageTicketsTeam2}}</td>
+    <td>{{gamemode.winsTeam1}}</td>
+    <td>{{gamemode.winsTeam2}}</td>
+    <td>{{gamemode.draws}}</td>
+  </tr>
+  </tbody>
+</table>
+<button type="button" class="btn" (click)="goBack()">go back</button>
+</div>
