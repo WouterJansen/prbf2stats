@@ -35,3 +35,5 @@ export class MapdetailComponent implements OnInit {
   }
 
 }
+
+

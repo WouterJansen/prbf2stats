@@ -1,1 +1,21 @@
-/* You can add global styles to this file, and also import other style files */
+body {
+  background-color: #333;
+  color: white;
+}
+/* navbar */
+.navbar-default {
+  background-color: #111;
+  border-color: #111;
+}
+/* Title */
+.navbar-default .navbar-brand {
+  color: #39c;
+}
+.navbar-default .navbar-brand:hover,
+.navbar-default .navbar-brand:focus {
+  color: #39c;
+}
+/* Link */
+.navbar-default .navbar-nav > li > a {
+  color: #39c;
+}
