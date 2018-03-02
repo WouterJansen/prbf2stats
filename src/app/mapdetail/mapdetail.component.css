@@ -17,3 +17,7 @@ tr.header td, th{
   border: transparent;
 }
 
+.btn-info{
+  background: #39c;
+  border: #39c;
+}

@@ -16,7 +16,7 @@ export class AlertsComponent {
     this.alerts.push({
       id: 1,
       type: 'warning',
-      message: 'This site is heavily WIP. Do not blind trust this data!',
+      message: 'This site is heavily WIP. Do not blindly trust this data!',
     });
     this.backup = this.alerts.map((alert: IAlert) => Object.assign({}, alert));
   }

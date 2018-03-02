@@ -13,8 +13,8 @@ export class MapService {
   constructor(
     private http: HttpClient) { }
 
-  getAllLevels (): Observable<Level[]> {
-    return this.http.get<Level[]>('./maps/maplist.json');
+  getAllLevels (): Observable<any> {
+    return this.http.get<any>('./maps/maplist.json');
   }
 
   getLevel (mapname: string): Observable<Level> {

@@ -3,6 +3,34 @@
   Last generated on {{maplist.date}}. <br />
   Click on a map's name for detailed statistics.
 </p>
+  <div class="container">
+    <div class="row">
+      <div class="col stat">
+        <div class="milestone-counter">
+          <i class="fas fa-map fa-3x"></i>
+          <span class="stat-count highlight">{{maplist.maps.length}} maps</span>
+        </div>
+      </div>
+      <div class="col stat">
+        <div class="milestone-counter">
+          <i class="fas fa-hashtag fa-3x"></i>
+          <span class="stat-count highlight">{{roundsplayed}} rounds</span>
+        </div>
+      </div>
+      <div class="col stat">
+        <div class="milestone-counter">
+          <i class="fas fa-balance-scale fa-3x"></i>
+          <span class="stat-count highlight">{{bluforbias | number}}% balanced</span>
+        </div>
+      </div>
+      <div class="col stat">
+        <div class="milestone-counter">
+          <i class="fas fa-clock fa-3x"></i>
+          <span class="stat-count highlight">&#x7e;{{averagetime | number}} min</span>
+        </div>
+      </div>
+    </div>
+  </div>
   <table class="table">
     <thead>
     <tr class="header">

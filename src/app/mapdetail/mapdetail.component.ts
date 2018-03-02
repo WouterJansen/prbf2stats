@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Level } from '../level';
-import { Location } from '@angular/common';
 import { ActivatedRoute } from '@angular/router';
 import {MapService} from '../map.service';
 
@@ -16,15 +15,10 @@ export class MapdetailComponent implements OnInit {
   data: object;
 
   constructor(    private route: ActivatedRoute,
-                  private mapService: MapService,
-                  private location: Location) { }
+                  private mapService: MapService) { }
 
   ngOnInit() {
     this.getLevel();
-  }
-
-  goBack(): void {
-    this.location.back();
   }
 
   getLevel(): void {
