@@ -25,12 +25,12 @@ export class MaplistComponent implements OnInit {
   }
 
   getdata(maplist) {
-    this.maplist = maplist
+    this.maplist = maplist;
     this.maplist.maps.sort(function(a, b) {
       if (a.name < b.name) { return -1; }
       if (a.name > b.name) { return 1; }
       return 0;
-    })
+    });
     for (const map of maplist.maps) {
       this.roundsplayed = this.roundsplayed + map.timesPlayed;
       this.totalteam1 = this.totalteam1 + map.winsTeam1;

@@ -1,96 +1,501 @@
 {
-    "averageDuration": 82.09599999999952, 
-    "averageTicketsTeam1": 217, 
-    "averageTicketsTeam2": 0, 
+    "averageDuration": 40.03216666666672, 
+    "averageTicketsTeam1": 26, 
+    "averageTicketsTeam2": 125, 
     "draws": 0, 
     "gameModes": [
         {
-            "averageDuration": 82.09599999999952, 
-            "averageTicketsTeam1": 217, 
-            "averageTicketsTeam2": 0, 
+            "averageDuration": 30.21399999999885, 
+            "averageTicketsTeam1": 35, 
+            "averageTicketsTeam2": 42, 
             "draws": 0, 
             "layers": [
                 {
-                    "averageDuration": 82.09599999999952, 
-                    "averageTicketsTeam1": 217, 
-                    "averageTicketsTeam2": 0, 
+                    "averageDuration": 30.21399999999885, 
+                    "averageTicketsTeam1": 35, 
+                    "averageTicketsTeam2": 42, 
                     "draws": 0, 
-                    "name": "layer_128", 
+                    "name": "layer_16", 
                     "routes": [
                         {
-                            "averageDuration": 82.09599999999952, 
-                            "averageTicketsTeam1": 217, 
-                            "averageTicketsTeam2": 0, 
+                            "averageDuration": 26.21999999999881, 
+                            "averageTicketsTeam1": 0, 
+                            "averageTicketsTeam2": 51, 
                             "draws": 0, 
-                            "id": "route_1_204_211_201_206_214_401_402", 
+                            "id": "route_1_703_701_704_705_707_702_706", 
                             "roundsPlayed": [
                                 {
                                     "completed": true, 
-                                    "date": 1517701537, 
-                                    "duration": 82.09599999999952, 
+                                    "date": 1503311577, 
+                                    "duration": 26.21999999999881, 
                                     "flags": [
                                         {
                                             "cpid": 1, 
                                             "radius": 0, 
-                                            "x": 64029, 
-                                            "y": 30, 
-                                            "z": 1822
+                                            "x": 64530, 
+                                            "y": 36, 
+                                            "z": 965
                                         }, 
                                         {
-                                            "cpid": 204, 
-                                            "radius": 250, 
-                                            "x": 1036, 
-                                            "y": 30, 
-                                            "z": 65020
-                                        }, 
-                                        {
-                                            "cpid": 211, 
-                                            "radius": 100, 
-                                            "x": 1106, 
-                                            "y": 31, 
-                                            "z": 807
-                                        }, 
-                                        {
-                                            "cpid": 201, 
-                                            "radius": 200, 
-                                            "x": 64583, 
-                                            "y": 40, 
-                                            "z": 783
-                                        }, 
-                                        {
-                                            "cpid": 206, 
+                                            "cpid": 703, 
                                             "radius": 0, 
-                                            "x": 65518, 
-                                            "y": 40, 
-                                            "z": 63724
+                                            "x": 64618, 
+                                            "y": 45, 
+                                            "z": 507
                                         }, 
                                         {
-                                            "cpid": 214, 
-                                            "radius": 90, 
-                                            "x": 65457, 
-                                            "y": 34, 
-                                            "z": 38
+                                            "cpid": 701, 
+                                            "radius": 30, 
+                                            "x": 64555, 
+                                            "y": 45, 
+                                            "z": 865
                                         }, 
                                         {
-                                            "cpid": 401, 
-                                            "radius": 100, 
-                                            "x": 64562, 
-                                            "y": 40, 
-                                            "z": 1179
+                                            "cpid": 704, 
+                                            "radius": 30, 
+                                            "x": 64511, 
+                                            "y": 45, 
+                                            "z": 789
                                         }, 
                                         {
-                                            "cpid": 402, 
-                                            "radius": 100, 
-                                            "x": 64158, 
-                                            "y": 38, 
-                                            "z": 64546
+                                            "cpid": 705, 
+                                            "radius": 30, 
+                                            "x": 64650, 
+                                            "y": 45, 
+                                            "z": 688
+                                        }, 
+                                        {
+                                            "cpid": 707, 
+                                            "radius": 30, 
+                                            "x": 64625, 
+                                            "y": 45, 
+                                            "z": 602
+                                        }, 
+                                        {
+                                            "cpid": 702, 
+                                            "radius": 30, 
+                                            "x": 64640, 
+                                            "y": 45, 
+                                            "z": 804
+                                        }, 
+                                        {
+                                            "cpid": 706, 
+                                            "radius": 30, 
+                                            "x": 64540, 
+                                            "y": 45, 
+                                            "z": 693
                                         }
                                     ], 
-                                    "gameMode": "gpm_cq", 
-                                    "layer": "layer_128", 
+                                    "gameMode": "gpm_skirmish", 
+                                    "layer": "layer_16", 
                                     "map": "khamisiyah", 
-                                    "playerCount": 100, 
-                                    "ticketsTeam1": 217, 
+                                    "playerCount": 45, 
+                                    "ticketsTeam1": 0, 
+                                    "ticketsTeam2": 51
+                                }
+                            ], 
+                            "timesPlayed": 1, 
+                            "winsTeam1": 0, 
+                            "winsTeam2": 1
+                        }, 
+                        {
+                            "averageDuration": 34.42133333333087, 
+                            "averageTicketsTeam1": 22, 
+                            "averageTicketsTeam2": 0, 
+                            "draws": 0, 
+                            "id": "route_702_701_706_705_1_707_703_704", 
+                            "roundsPlayed": [
+                                {
+                                    "completed": true, 
+                                    "date": 1503830173, 
+                                    "duration": 34.42133333333087, 
+                                    "flags": [
+                                        {
+                                            "cpid": 702, 
+                                            "radius": 30, 
+                                            "x": 64640, 
+                                            "y": 45, 
+                                            "z": 804
+                                        }, 
+                                        {
+                                            "cpid": 701, 
+                                            "radius": 30, 
+                                            "x": 64555, 
+                                            "y": 45, 
+                                            "z": 865
+                                        }, 
+                                        {
+                                            "cpid": 706, 
+                                            "radius": 30, 
+                                            "x": 64540, 
+                                            "y": 45, 
+                                            "z": 693
+                                        }, 
+                                        {
+                                            "cpid": 705, 
+                                            "radius": 30, 
+                                            "x": 64650, 
+                                            "y": 45, 
+                                            "z": 688
+                                        }, 
+                                        {
+                                            "cpid": 1, 
+                                            "radius": 0, 
+                                            "x": 64530, 
+                                            "y": 36, 
+                                            "z": 965
+                                        }, 
+                                        {
+                                            "cpid": 707, 
+                                            "radius": 30, 
+                                            "x": 64625, 
+                                            "y": 45, 
+                                            "z": 602
+                                        }, 
+                                        {
+                                            "cpid": 703, 
+                                            "radius": 0, 
+                                            "x": 64618, 
+                                            "y": 45, 
+                                            "z": 507
+                                        }, 
+                                        {
+                                            "cpid": 704, 
+                                            "radius": 30, 
+                                            "x": 64511, 
+                                            "y": 45, 
+                                            "z": 789
+                                        }
+                                    ], 
+                                    "gameMode": "gpm_skirmish", 
+                                    "layer": "layer_16", 
+                                    "map": "khamisiyah", 
+                                    "playerCount": 43, 
+                                    "ticketsTeam1": 22, 
+                                    "ticketsTeam2": 0
+                                }
+                            ], 
+                            "timesPlayed": 1, 
+                            "winsTeam1": 1, 
+                            "winsTeam2": 0
+                        }, 
+                        {
+                            "averageDuration": 40.144666666667334, 
+                            "averageTicketsTeam1": 0, 
+                            "averageTicketsTeam2": 12, 
+                            "draws": 0, 
+                            "id": "route_704_706_703_701_702_1_705_707", 
+                            "roundsPlayed": [
+                                {
+                                    "completed": true, 
+                                    "date": 1504346631, 
+                                    "duration": 40.144666666667334, 
+                                    "flags": [
+                                        {
+                                            "cpid": 704, 
+                                            "radius": 30, 
+                                            "x": 64511, 
+                                            "y": 45, 
+                                            "z": 789
+                                        }, 
+                                        {
+                                            "cpid": 706, 
+                                            "radius": 30, 
+                                            "x": 64540, 
+                                            "y": 45, 
+                                            "z": 693
+                                        }, 
+                                        {
+                                            "cpid": 703, 
+                                            "radius": 0, 
+                                            "x": 64618, 
+                                            "y": 45, 
+                                            "z": 507
+                                        }, 
+                                        {
+                                            "cpid": 701, 
+                                            "radius": 30, 
+                                            "x": 64555, 
+                                            "y": 45, 
+                                            "z": 865
+                                        }, 
+                                        {
+                                            "cpid": 702, 
+                                            "radius": 30, 
+                                            "x": 64640, 
+                                            "y": 45, 
+                                            "z": 804
+                                        }, 
+                                        {
+                                            "cpid": 1, 
+                                            "radius": 0, 
+                                            "x": 64530, 
+                                            "y": 36, 
+                                            "z": 965
+                                        }, 
+                                        {
+                                            "cpid": 705, 
+                                            "radius": 30, 
+                                            "x": 64650, 
+                                            "y": 45, 
+                                            "z": 688
+                                        }, 
+                                        {
+                                            "cpid": 707, 
+                                            "radius": 30, 
+                                            "x": 64625, 
+                                            "y": 45, 
+                                            "z": 602
+                                        }
+                                    ], 
+                                    "gameMode": "gpm_skirmish", 
+                                    "layer": "layer_16", 
+                                    "map": "khamisiyah", 
+                                    "playerCount": 30, 
+                                    "ticketsTeam1": 0, 
+                                    "ticketsTeam2": 12
+                                }
+                            ], 
+                            "timesPlayed": 1, 
+                            "winsTeam1": 0, 
+                            "winsTeam2": 1
+                        }, 
+                        {
+                            "averageDuration": 27.907333333331803, 
+                            "averageTicketsTeam1": 0, 
+                            "averageTicketsTeam2": 64, 
+                            "draws": 0, 
+                            "id": "route_705_707_1_701_706_702_704_703", 
+                            "roundsPlayed": [
+                                {
+                                    "completed": true, 
+                                    "date": 1504869632, 
+                                    "duration": 27.907333333331803, 
+                                    "flags": [
+                                        {
+                                            "cpid": 705, 
+                                            "radius": 30, 
+                                            "x": 64650, 
+                                            "y": 45, 
+                                            "z": 688
+                                        }, 
+                                        {
+                                            "cpid": 707, 
+                                            "radius": 30, 
+                                            "x": 64625, 
+                                            "y": 45, 
+                                            "z": 602
+                                        }, 
+                                        {
+                                            "cpid": 1, 
+                                            "radius": 0, 
+                                            "x": 64530, 
+                                            "y": 36, 
+                                            "z": 965
+                                        }, 
+                                        {
+                                            "cpid": 701, 
+                                            "radius": 30, 
+                                            "x": 64555, 
+                                            "y": 45, 
+                                            "z": 865
+                                        }, 
+                                        {
+                                            "cpid": 706, 
+                                            "radius": 30, 
+                                            "x": 64540, 
+                                            "y": 45, 
+                                            "z": 693
+                                        }, 
+                                        {
+                                            "cpid": 702, 
+                                            "radius": 30, 
+                                            "x": 64640, 
+                                            "y": 45, 
+                                            "z": 804
+                                        }, 
+                                        {
+                                            "cpid": 704, 
+                                            "radius": 30, 
+                                            "x": 64511, 
+                                            "y": 45, 
+                                            "z": 789
+                                        }, 
+                                        {
+                                            "cpid": 703, 
+                                            "radius": 0, 
+                                            "x": 64618, 
+                                            "y": 45, 
+                                            "z": 507
+                                        }
+                                    ], 
+                                    "gameMode": "gpm_skirmish", 
+                                    "layer": "layer_16", 
+                                    "map": "khamisiyah", 
+                                    "playerCount": 43, 
+                                    "ticketsTeam1": 0, 
+                                    "ticketsTeam2": 64
+                                }
+                            ], 
+                            "timesPlayed": 1, 
+                            "winsTeam1": 0, 
+                            "winsTeam2": 1
+                        }, 
+                        {
+                            "averageDuration": 21.016666666666524, 
+                            "averageTicketsTeam1": 115, 
+                            "averageTicketsTeam2": 125, 
+                            "draws": 0, 
+                            "id": "route_701_705_703_704_710_706_702_707", 
+                            "roundsPlayed": [
+                                {
+                                    "completed": true, 
+                                    "date": 1518247688, 
+                                    "duration": 21.016666666666524, 
+                                    "flags": [
+                                        {
+                                            "cpid": 701, 
+                                            "radius": 30, 
+                                            "x": 64555, 
+                                            "y": 45, 
+                                            "z": 865
+                                        }, 
+                                        {
+                                            "cpid": 705, 
+                                            "radius": 30, 
+                                            "x": 64650, 
+                                            "y": 45, 
+                                            "z": 688
+                                        }, 
+                                        {
+                                            "cpid": 703, 
+                                            "radius": 0, 
+                                            "x": 64618, 
+                                            "y": 45, 
+                                            "z": 507
+                                        }, 
+                                        {
+                                            "cpid": 704, 
+                                            "radius": 30, 
+                                            "x": 64511, 
+                                            "y": 45, 
+                                            "z": 789
+                                        }, 
+                                        {
+                                            "cpid": 710, 
+                                            "radius": 0, 
+                                            "x": 64530, 
+                                            "y": 36, 
+                                            "z": 965
+                                        }, 
+                                        {
+                                            "cpid": 706, 
+                                            "radius": 30, 
+                                            "x": 64540, 
+                                            "y": 45, 
+                                            "z": 693
+                                        }, 
+                                        {
+                                            "cpid": 702, 
+                                            "radius": 30, 
+                                            "x": 64640, 
+                                            "y": 45, 
+                                            "z": 804
+                                        }, 
+                                        {
+                                            "cpid": 707, 
+                                            "radius": 30, 
+                                            "x": 64625, 
+                                            "y": 45, 
+                                            "z": 602
+                                        }
+                                    ], 
+                                    "gameMode": "gpm_skirmish", 
+                                    "layer": "layer_16", 
+                                    "map": "khamisiyah", 
+                                    "playerCount": 21, 
+                                    "ticketsTeam1": 115, 
+                                    "ticketsTeam2": 125
+                                }
+                            ], 
+                            "timesPlayed": 1, 
+                            "winsTeam1": 0, 
+                            "winsTeam2": 1
+                        }, 
+                        {
+                            "averageDuration": 31.573999999997806, 
+                            "averageTicketsTeam1": 76, 
+                            "averageTicketsTeam2": 0, 
+                            "draws": 0, 
+                            "id": "route_702_705_701_706_710_704_703_707", 
+                            "roundsPlayed": [
+                                {
+                                    "completed": true, 
+                                    "date": 1518604192, 
+                                    "duration": 31.573999999997806, 
+                                    "flags": [
+                                        {
+                                            "cpid": 702, 
+                                            "radius": 30, 
+                                            "x": 64640, 
+                                            "y": 45, 
+                                            "z": 804
+                                        }, 
+                                        {
+                                            "cpid": 705, 
+                                            "radius": 30, 
+                                            "x": 64650, 
+                                            "y": 45, 
+                                            "z": 688
+                                        }, 
+                                        {
+                                            "cpid": 701, 
+                                            "radius": 30, 
+                                            "x": 64555, 
+                                            "y": 45, 
+                                            "z": 865
+                                        }, 
+                                        {
+                                            "cpid": 706, 
+                                            "radius": 30, 
+                                            "x": 64540, 
+                                            "y": 45, 
+                                            "z": 693
+                                        }, 
+                                        {
+                                            "cpid": 710, 
+                                            "radius": 0, 
+                                            "x": 64530, 
+                                            "y": 36, 
+                                            "z": 965
+                                        }, 
+                                        {
+                                            "cpid": 704, 
+                                            "radius": 30, 
+                                            "x": 64511, 
+                                            "y": 45, 
+                                            "z": 789
+                                        }, 
+                                        {
+                                            "cpid": 703, 
+                                            "radius": 0, 
+                                            "x": 64618, 
+                                            "y": 45, 
+                                            "z": 507
+                                        }, 
+                                        {
+                                            "cpid": 707, 
+                                            "radius": 30, 
+                                            "x": 64625, 
+                                            "y": 45, 
+                                            "z": 602
+                                        }
+                                    ], 
+                                    "gameMode": "gpm_skirmish", 
+                                    "layer": "layer_16", 
+                                    "map": "khamisiyah", 
+                                    "playerCount": 34, 
+                                    "ticketsTeam1": 76, 
                                     "ticketsTeam2": 0
                                 }
                             ], 
@@ -99,19 +504,187 @@
                             "winsTeam2": 0
                         }
                     ], 
+                    "timesPlayed": 6, 
+                    "winsTeam1": 2, 
+                    "winsTeam2": 4
+                }
+            ], 
+            "name": "gpm_skirmish", 
+            "timesPlayed": 6, 
+            "winsTeam1": 2, 
+            "winsTeam2": 4
+        }, 
+        {
+            "averageDuration": 55.01133333334114, 
+            "averageTicketsTeam1": 0, 
+            "averageTicketsTeam2": 214, 
+            "draws": 0, 
+            "layers": [
+                {
+                    "averageDuration": 55.01133333334114, 
+                    "averageTicketsTeam1": 0, 
+                    "averageTicketsTeam2": 214, 
+                    "draws": 0, 
+                    "name": "layer_32", 
+                    "routes": [
+                        {
+                            "averageDuration": 55.01133333334114, 
+                            "averageTicketsTeam1": 0, 
+                            "averageTicketsTeam2": 214, 
+                            "draws": 0, 
+                            "id": "route_204_402_209_210_206_1_401_403", 
+                            "roundsPlayed": [
+                                {
+                                    "completed": true, 
+                                    "date": 1504366727, 
+                                    "duration": 55.01133333334114, 
+                                    "flags": [
+                                        {
+                                            "cpid": 204, 
+                                            "radius": 90, 
+                                            "x": 387, 
+                                            "y": 37, 
+                                            "z": 544
+                                        }, 
+                                        {
+                                            "cpid": 402, 
+                                            "radius": 75, 
+                                            "x": 64710, 
+                                            "y": 41, 
+                                            "z": 728
+                                        }, 
+                                        {
+                                            "cpid": 209, 
+                                            "radius": 100, 
+                                            "x": 64565, 
+                                            "y": 37, 
+                                            "z": 906
+                                        }, 
+                                        {
+                                            "cpid": 210, 
+                                            "radius": 100, 
+                                            "x": 64561, 
+                                            "y": 39, 
+                                            "z": 1142
+                                        }, 
+                                        {
+                                            "cpid": 206, 
+                                            "radius": 0, 
+                                            "x": 65523, 
+                                            "y": 40, 
+                                            "z": 63725
+                                        }, 
+                                        {
+                                            "cpid": 1, 
+                                            "radius": 0, 
+                                            "x": 64029, 
+                                            "y": 40, 
+                                            "z": 1822
+                                        }, 
+                                        {
+                                            "cpid": 401, 
+                                            "radius": 75, 
+                                            "x": 65466, 
+                                            "y": 27, 
+                                            "z": 38
+                                        }, 
+                                        {
+                                            "cpid": 403, 
+                                            "radius": 200, 
+                                            "x": 1016, 
+                                            "y": 37, 
+                                            "z": 65033
+                                        }
+                                    ], 
+                                    "gameMode": "gpm_cq", 
+                                    "layer": "layer_32", 
+                                    "map": "khamisiyah", 
+                                    "playerCount": 98, 
+                                    "ticketsTeam1": 0, 
+                                    "ticketsTeam2": 214
+                                }
+                            ], 
+                            "timesPlayed": 1, 
+                            "winsTeam1": 0, 
+                            "winsTeam2": 1
+                        }
+                    ], 
                     "timesPlayed": 1, 
-                    "winsTeam1": 1, 
-                    "winsTeam2": 0
+                    "winsTeam1": 0, 
+                    "winsTeam2": 1
                 }
             ], 
             "name": "gpm_cq", 
             "timesPlayed": 1, 
-            "winsTeam1": 1, 
-            "winsTeam2": 0
+            "winsTeam1": 0, 
+            "winsTeam2": 1
+        }, 
+        {
+            "averageDuration": 83.96199999999948, 
+            "averageTicketsTeam1": 1, 
+            "averageTicketsTeam2": 538, 
+            "draws": 0, 
+            "layers": [
+                {
+                    "averageDuration": 83.96199999999948, 
+                    "averageTicketsTeam1": 1, 
+                    "averageTicketsTeam2": 538, 
+                    "draws": 0, 
+                    "name": "layer_64", 
+                    "routes": [
+                        {
+                            "averageDuration": 83.96199999999948, 
+                            "averageTicketsTeam1": 1, 
+                            "averageTicketsTeam2": 538, 
+                            "draws": 0, 
+                            "id": "route_1_206", 
+                            "roundsPlayed": [
+                                {
+                                    "completed": true, 
+                                    "date": 1517842572, 
+                                    "duration": 83.96199999999948, 
+                                    "flags": [
+                                        {
+                                            "cpid": 1, 
+                                            "radius": 1, 
+                                            "x": 64029, 
+                                            "y": 40, 
+                                            "z": 1822
+                                        }, 
+                                        {
+                                            "cpid": 206, 
+                                            "radius": 1, 
+                                            "x": 65523, 
+                                            "y": 40, 
+                                            "z": 63725
+                                        }
+                                    ], 
+                                    "gameMode": "gpm_insurgency", 
+                                    "layer": "layer_64", 
+                                    "map": "khamisiyah", 
+                                    "playerCount": 95, 
+                                    "ticketsTeam1": 1, 
+                                    "ticketsTeam2": 538
+                                }
+                            ], 
+                            "timesPlayed": 1, 
+                            "winsTeam1": 0, 
+                            "winsTeam2": 1
+                        }
+                    ], 
+                    "timesPlayed": 1, 
+                    "winsTeam1": 0, 
+                    "winsTeam2": 1
+                }
+            ], 
+            "name": "gpm_insurgency", 
+            "timesPlayed": 1, 
+            "winsTeam1": 0, 
+            "winsTeam2": 1
         }
     ], 
     "name": "khamisiyah", 
-    "timesPlayed": 1, 
-    "winsTeam1": 1, 
-    "winsTeam2": 0
+    "timesPlayed": 8, 
+    "winsTeam1": 2, 
+    "winsTeam2": 6
 }

@@ -1,43 +1,43 @@
 {
-    "averageDuration": 81.38466666666677, 
-    "averageTicketsTeam1": 0, 
-    "averageTicketsTeam2": 113, 
+    "averageDuration": 36.97566666666982, 
+    "averageTicketsTeam1": 43, 
+    "averageTicketsTeam2": 200, 
     "draws": 0, 
     "gameModes": [
         {
-            "averageDuration": 81.38466666666677, 
+            "averageDuration": 51.26200000000686, 
             "averageTicketsTeam1": 0, 
-            "averageTicketsTeam2": 113, 
+            "averageTicketsTeam2": 395, 
             "draws": 0, 
             "layers": [
                 {
-                    "averageDuration": 81.38466666666677, 
+                    "averageDuration": 51.26200000000686, 
                     "averageTicketsTeam1": 0, 
-                    "averageTicketsTeam2": 113, 
+                    "averageTicketsTeam2": 395, 
                     "draws": 0, 
-                    "name": "layer_64", 
+                    "name": "layer_32", 
                     "routes": [
                         {
-                            "averageDuration": 81.38466666666677, 
+                            "averageDuration": 51.26200000000686, 
                             "averageTicketsTeam1": 0, 
-                            "averageTicketsTeam2": 113, 
+                            "averageTicketsTeam2": 395, 
                             "draws": 0, 
-                            "id": "route_101_1", 
+                            "id": "route_202_201", 
                             "roundsPlayed": [
                                 {
                                     "completed": true, 
-                                    "date": 1517686354, 
-                                    "duration": 81.38466666666677, 
+                                    "date": 1503176085, 
+                                    "duration": 51.26200000000686, 
                                     "flags": [
                                         {
-                                            "cpid": 101, 
+                                            "cpid": 202, 
                                             "radius": 1, 
                                             "x": 818, 
                                             "y": 27, 
                                             "z": 875
                                         }, 
                                         {
-                                            "cpid": 1, 
+                                            "cpid": 201, 
                                             "radius": 1, 
                                             "x": 65511, 
                                             "y": 25, 
@@ -45,11 +45,11 @@
                                         }
                                     ], 
                                     "gameMode": "gpm_insurgency", 
-                                    "layer": "layer_64", 
+                                    "layer": "layer_32", 
                                     "map": "karbala", 
-                                    "playerCount": 99, 
+                                    "playerCount": 81, 
                                     "ticketsTeam1": 0, 
-                                    "ticketsTeam2": 113
+                                    "ticketsTeam2": 395
                                 }
                             ], 
                             "timesPlayed": 1, 
@@ -66,10 +66,87 @@
             "timesPlayed": 1, 
             "winsTeam1": 0, 
             "winsTeam2": 1
+        }, 
+        {
+            "averageDuration": 22.689333333332772, 
+            "averageTicketsTeam1": 87, 
+            "averageTicketsTeam2": 6, 
+            "draws": 0, 
+            "layers": [
+                {
+                    "averageDuration": 22.689333333332772, 
+                    "averageTicketsTeam1": 87, 
+                    "averageTicketsTeam2": 6, 
+                    "draws": 0, 
+                    "name": "layer_16", 
+                    "routes": [
+                        {
+                            "averageDuration": 22.689333333332772, 
+                            "averageTicketsTeam1": 87, 
+                            "averageTicketsTeam2": 6, 
+                            "draws": 0, 
+                            "id": "route_701_702_704_703", 
+                            "roundsPlayed": [
+                                {
+                                    "completed": true, 
+                                    "date": 1504178621, 
+                                    "duration": 22.689333333332772, 
+                                    "flags": [
+                                        {
+                                            "cpid": 701, 
+                                            "radius": 50, 
+                                            "x": 65510, 
+                                            "y": 23, 
+                                            "z": 65332
+                                        }, 
+                                        {
+                                            "cpid": 702, 
+                                            "radius": 75, 
+                                            "x": 65531, 
+                                            "y": 22, 
+                                            "z": 65500
+                                        }, 
+                                        {
+                                            "cpid": 704, 
+                                            "radius": 75, 
+                                            "x": 11, 
+                                            "y": 22, 
+                                            "z": 443
+                                        }, 
+                                        {
+                                            "cpid": 703, 
+                                            "radius": 75, 
+                                            "x": 15, 
+                                            "y": 22, 
+                                            "z": 173
+                                        }
+                                    ], 
+                                    "gameMode": "gpm_skirmish", 
+                                    "layer": "layer_16", 
+                                    "map": "karbala", 
+                                    "playerCount": 47, 
+                                    "ticketsTeam1": 87, 
+                                    "ticketsTeam2": 6
+                                }
+                            ], 
+                            "timesPlayed": 1, 
+                            "winsTeam1": 1, 
+                            "winsTeam2": 0
+                        }
+                    ], 
+                    "timesPlayed": 1, 
+                    "winsTeam1": 1, 
+                    "winsTeam2": 0
+                }
+            ], 
+            "name": "gpm_skirmish", 
+            "timesPlayed": 1, 
+            "winsTeam1": 1, 
+            "winsTeam2": 0
         }
     ], 
     "name": "karbala", 
-    "timesPlayed": 1, 
-    "winsTeam1": 0, 
+    "timesPlayed": 2, 
+    "winsTeam1": 1, 
     "winsTeam2": 1
 }
