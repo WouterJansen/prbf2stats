@@ -33,7 +33,7 @@
     "rxjs": "^5.5.6",
     "zone.js": "^0.8.19",
     "typescript": "~2.5.3",
-    "@angular/language-service": "^5.2.0",
+    "@angular/language-service": "^5.2.0"
   },
   "devDependencies": {
 
