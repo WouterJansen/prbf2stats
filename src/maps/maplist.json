@@ -1,0 +1,85 @@
+{
+    "date": "2018-03-02 14:58", 
+    "maps": [
+        {
+            "averageDuration": 64.99533333334679, 
+            "averageTicketsTeam1": 23, 
+            "averageTicketsTeam2": 12, 
+            "draws": 0, 
+            "name": "assault_on_grozny", 
+            "timesPlayed": 1, 
+            "winsTeam1": 1, 
+            "winsTeam2": 0
+        }, 
+        {
+            "averageDuration": 55.49800000000388, 
+            "averageTicketsTeam1": 148, 
+            "averageTicketsTeam2": 66, 
+            "draws": 0, 
+            "name": "iron_thunder", 
+            "timesPlayed": 3, 
+            "winsTeam1": 2, 
+            "winsTeam2": 1
+        }, 
+        {
+            "averageDuration": 82.09599999999952, 
+            "averageTicketsTeam1": 217, 
+            "averageTicketsTeam2": 0, 
+            "draws": 0, 
+            "name": "khamisiyah", 
+            "timesPlayed": 1, 
+            "winsTeam1": 1, 
+            "winsTeam2": 0
+        }, 
+        {
+            "averageDuration": 53.49133333334075, 
+            "averageTicketsTeam1": 315, 
+            "averageTicketsTeam2": 0, 
+            "draws": 0, 
+            "name": "black_gold", 
+            "timesPlayed": 1, 
+            "winsTeam1": 1, 
+            "winsTeam2": 0
+        }, 
+        {
+            "averageDuration": 81.38466666666677, 
+            "averageTicketsTeam1": 0, 
+            "averageTicketsTeam2": 113, 
+            "draws": 0, 
+            "name": "karbala", 
+            "timesPlayed": 1, 
+            "winsTeam1": 0, 
+            "winsTeam2": 1
+        }, 
+        {
+            "averageDuration": 42.584000000000096, 
+            "averageTicketsTeam1": 0, 
+            "averageTicketsTeam2": 113, 
+            "draws": 0, 
+            "name": "shahadah", 
+            "timesPlayed": 1, 
+            "winsTeam1": 0, 
+            "winsTeam2": 1
+        }, 
+        {
+            "averageDuration": 91.92133333332995, 
+            "averageTicketsTeam1": 2, 
+            "averageTicketsTeam2": 21, 
+            "draws": 0, 
+            "name": "outpost", 
+            "timesPlayed": 2, 
+            "winsTeam1": 1, 
+            "winsTeam2": 1
+        }, 
+        {
+            "averageDuration": 76.24800000000778, 
+            "averageTicketsTeam1": 1, 
+            "averageTicketsTeam2": 38, 
+            "draws": 0, 
+            "name": "saaremaa", 
+            "timesPlayed": 1, 
+            "winsTeam1": 0, 
+            "winsTeam2": 1
+        }
+    ]
+}

@@ -1,0 +1,110 @@
+{
+    "averageDuration": 76.24800000000778, 
+    "averageTicketsTeam1": 1, 
+    "averageTicketsTeam2": 38, 
+    "draws": 0, 
+    "gameModes": [
+        {
+            "averageDuration": 76.24800000000778, 
+            "averageTicketsTeam1": 1, 
+            "averageTicketsTeam2": 38, 
+            "draws": 0, 
+            "layers": [
+                {
+                    "averageDuration": 76.24800000000778, 
+                    "averageTicketsTeam1": 1, 
+                    "averageTicketsTeam2": 38, 
+                    "draws": 0, 
+                    "name": "layer_64", 
+                    "routes": [
+                        {
+                            "averageDuration": 76.24800000000778, 
+                            "averageTicketsTeam1": 1, 
+                            "averageTicketsTeam2": 38, 
+                            "draws": 0, 
+                            "id": "route_912_1_902_901_910_101_907", 
+                            "roundsPlayed": [
+                                {
+                                    "completed": true, 
+                                    "date": 1517933168, 
+                                    "duration": 76.24800000000778, 
+                                    "flags": [
+                                        {
+                                            "cpid": 912, 
+                                            "radius": 100, 
+                                            "x": 65136, 
+                                            "y": 152, 
+                                            "z": 65164
+                                        }, 
+                                        {
+                                            "cpid": 1, 
+                                            "radius": 1, 
+                                            "x": 1840, 
+                                            "y": 33, 
+                                            "z": 1862
+                                        }, 
+                                        {
+                                            "cpid": 902, 
+                                            "radius": 150, 
+                                            "x": 65101, 
+                                            "y": 109, 
+                                            "z": 64547
+                                        }, 
+                                        {
+                                            "cpid": 901, 
+                                            "radius": 150, 
+                                            "x": 777, 
+                                            "y": 75, 
+                                            "z": 64727
+                                        }, 
+                                        {
+                                            "cpid": 910, 
+                                            "radius": 150, 
+                                            "x": 1192, 
+                                            "y": 55, 
+                                            "z": 65518
+                                        }, 
+                                        {
+                                            "cpid": 101, 
+                                            "radius": 1, 
+                                            "x": 63682, 
+                                            "y": 33, 
+                                            "z": 63668
+                                        }, 
+                                        {
+                                            "cpid": 907, 
+                                            "radius": 150, 
+                                            "x": 998, 
+                                            "y": 134, 
+                                            "z": 678
+                                        }
+                                    ], 
+                                    "gameMode": "gpm_cq", 
+                                    "layer": "layer_64", 
+                                    "map": "saaremaa", 
+                                    "playerCount": 100, 
+                                    "ticketsTeam1": 1, 
+                                    "ticketsTeam2": 38
+                                }
+                            ], 
+                            "timesPlayed": 1, 
+                            "winsTeam1": 0, 
+                            "winsTeam2": 1
+                        }
+                    ], 
+                    "timesPlayed": 1, 
+                    "winsTeam1": 0, 
+                    "winsTeam2": 1
+                }
+            ], 
+            "name": "gpm_cq", 
+            "timesPlayed": 1, 
+            "winsTeam1": 0, 
+            "winsTeam2": 1
+        }
+    ], 
+    "name": "saaremaa", 
+    "timesPlayed": 1, 
+    "winsTeam1": 0, 
+    "winsTeam2": 1
+}

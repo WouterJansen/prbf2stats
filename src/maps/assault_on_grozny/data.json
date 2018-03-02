@@ -1,0 +1,117 @@
+{
+    "averageDuration": 64.99533333334679, 
+    "averageTicketsTeam1": 23, 
+    "averageTicketsTeam2": 12, 
+    "draws": 0, 
+    "gameModes": [
+        {
+            "averageDuration": 64.99533333334679, 
+            "averageTicketsTeam1": 23, 
+            "averageTicketsTeam2": 12, 
+            "draws": 0, 
+            "layers": [
+                {
+                    "averageDuration": 64.99533333334679, 
+                    "averageTicketsTeam1": 23, 
+                    "averageTicketsTeam2": 12, 
+                    "draws": 0, 
+                    "name": "layer_64", 
+                    "routes": [
+                        {
+                            "averageDuration": 64.99533333334679, 
+                            "averageTicketsTeam1": 23, 
+                            "averageTicketsTeam2": 12, 
+                            "draws": 0, 
+                            "id": "route_109_903_907_1_910_914_913_905", 
+                            "roundsPlayed": [
+                                {
+                                    "completed": true, 
+                                    "date": 1517941043, 
+                                    "duration": 64.99533333334679, 
+                                    "flags": [
+                                        {
+                                            "cpid": 109, 
+                                            "radius": 5, 
+                                            "x": 892, 
+                                            "y": 32, 
+                                            "z": 64648
+                                        }, 
+                                        {
+                                            "cpid": 903, 
+                                            "radius": 90, 
+                                            "x": 344, 
+                                            "y": 24, 
+                                            "z": 65255
+                                        }, 
+                                        {
+                                            "cpid": 907, 
+                                            "radius": 90, 
+                                            "x": 53, 
+                                            "y": 20, 
+                                            "z": 66
+                                        }, 
+                                        {
+                                            "cpid": 1, 
+                                            "radius": 5, 
+                                            "x": 64630, 
+                                            "y": 23, 
+                                            "z": 912
+                                        }, 
+                                        {
+                                            "cpid": 910, 
+                                            "radius": 90, 
+                                            "x": 65444, 
+                                            "y": 24, 
+                                            "z": 269
+                                        }, 
+                                        {
+                                            "cpid": 914, 
+                                            "radius": 90, 
+                                            "x": 65128, 
+                                            "y": 24, 
+                                            "z": 496
+                                        }, 
+                                        {
+                                            "cpid": 913, 
+                                            "radius": 90, 
+                                            "x": 65350, 
+                                            "y": 24, 
+                                            "z": 463
+                                        }, 
+                                        {
+                                            "cpid": 905, 
+                                            "radius": 90, 
+                                            "x": 297, 
+                                            "y": 24, 
+                                            "z": 65467
+                                        }
+                                    ], 
+                                    "gameMode": "gpm_cq", 
+                                    "layer": "layer_64", 
+                                    "map": "assault_on_grozny", 
+                                    "playerCount": 100, 
+                                    "ticketsTeam1": 23, 
+                                    "ticketsTeam2": 12
+                                }
+                            ], 
+                            "timesPlayed": 1, 
+                            "winsTeam1": 1, 
+                            "winsTeam2": 0
+                        }
+                    ], 
+                    "timesPlayed": 1, 
+                    "winsTeam1": 1, 
+                    "winsTeam2": 0
+                }
+            ], 
+            "name": "gpm_cq", 
+            "timesPlayed": 1, 
+            "winsTeam1": 1, 
+            "winsTeam2": 0
+        }
+    ], 
+    "name": "assault_on_grozny", 
+    "timesPlayed": 1, 
+    "winsTeam1": 1, 
+    "winsTeam2": 0
+}

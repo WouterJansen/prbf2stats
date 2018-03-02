@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import 'rxjs/add/operator/map';
-import {Level} from '../level';
 import {MapService} from '../map.service';
 
 @Component({
@@ -10,22 +9,14 @@ import {MapService} from '../map.service';
 })
 export class MaplistComponent implements OnInit {
 
-  levels: string[] = [];
+  maplist;
   constructor(private mapService: MapService) {}
 
   ngOnInit() {
-    this.getLevels();
+    this.getAllLevels();
   }
 
-  public getLevels(): void {
-    this.mapService.getLevels().subscribe(data => {
-      this.mapListToLevels(data as string[]);
-    });
-  }
-
-  private mapListToLevels(mapList: string[]) {
-    for (const mapName of mapList) {
-      this.levels.push(mapName);
-    }
+  public getAllLevels(): void {
+    this.mapService.getAllLevels().subscribe(maplist => this.maplist = maplist);
   }
 }

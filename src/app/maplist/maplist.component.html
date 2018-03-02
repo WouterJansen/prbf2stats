@@ -1,10 +1,36 @@
-<h2>Maps</h2>
-<ul class="levels">
-  <li *ngFor="let level of levels">
-    <a routerLink="/maps/detail/{{level}}">
-      <span>{{level}}</span>
-
-    </a>
-  </li>
-</ul>
-
+<div><h1 class="display-4">Maps</h1>
+<p class="lead">
+  Last generated on {{maplist.date}}. <br />
+  Click on a map's name for detailed statistics.
+</p>
+  <table class="table">
+    <thead>
+    <tr class="header">
+      <th scope="col">Name</th>
+      <th scope="col"># Played</th>
+      <th scope="col">Avg. Duration</th>
+      <th scope="col">Avg. Tickets Team 1</th>
+      <th scope="col">Avg. Tickets Team 2</th>
+      <th scope="col"># Wins Team 1</th>
+      <th scope="col"># Wins Team 2</th>
+      <th scope="col"># Draws</th>
+    </tr>
+    </thead>
+    <tbody>
+    <ng-template ngFor let-level [ngForOf]= "maplist.maps" let-i="index">
+      <tr class="gamemode">
+        <th><a routerLink="/maps/detail/{{level.name}}">
+          <span>{{level.name}}</span>
+        </a></th>
+        <td>{{level.timesPlayed}}</td>
+        <td>{{level.averageDuration.toFixed()}} min</td>
+        <td>{{level.averageTicketsTeam1}}</td>
+        <td>{{level.averageTicketsTeam2}}</td>
+        <td>{{level.winsTeam1}}</td>
+        <td>{{level.winsTeam2}}</td>
+        <td>{{level.draws}}</td>
+      </tr>
+    </ng-template>
+    </tbody>
+  </table>
+</div>

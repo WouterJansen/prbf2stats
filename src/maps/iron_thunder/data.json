@@ -1,0 +1,279 @@
+{
+    "averageDuration": 55.49800000000388, 
+    "averageTicketsTeam1": 148, 
+    "averageTicketsTeam2": 66, 
+    "draws": 0, 
+    "gameModes": [
+        {
+            "averageDuration": 55.49800000000388, 
+            "averageTicketsTeam1": 148, 
+            "averageTicketsTeam2": 66, 
+            "draws": 0, 
+            "layers": [
+                {
+                    "averageDuration": 55.49800000000388, 
+                    "averageTicketsTeam1": 148, 
+                    "averageTicketsTeam2": 66, 
+                    "draws": 0, 
+                    "name": "layer_64", 
+                    "routes": [
+                        {
+                            "averageDuration": 56.96600000000217, 
+                            "averageTicketsTeam1": 213, 
+                            "averageTicketsTeam2": 0, 
+                            "draws": 0, 
+                            "id": "route_20_19_3_5_1_2_7_6", 
+                            "roundsPlayed": [
+                                {
+                                    "completed": true, 
+                                    "date": 1517682887, 
+                                    "duration": 56.96600000000217, 
+                                    "flags": [
+                                        {
+                                            "cpid": 20, 
+                                            "radius": 10, 
+                                            "x": 64391, 
+                                            "y": 53, 
+                                            "z": 63857
+                                        }, 
+                                        {
+                                            "cpid": 19, 
+                                            "radius": 10, 
+                                            "x": 63928, 
+                                            "y": 150, 
+                                            "z": 64292
+                                        }, 
+                                        {
+                                            "cpid": 3, 
+                                            "radius": 90, 
+                                            "x": 7, 
+                                            "y": 83, 
+                                            "z": 866
+                                        }, 
+                                        {
+                                            "cpid": 5, 
+                                            "radius": 60, 
+                                            "x": 64283, 
+                                            "y": 291, 
+                                            "z": 1341
+                                        }, 
+                                        {
+                                            "cpid": 1, 
+                                            "radius": 1, 
+                                            "x": 1479, 
+                                            "y": 101, 
+                                            "z": 1473
+                                        }, 
+                                        {
+                                            "cpid": 2, 
+                                            "radius": 70, 
+                                            "x": 1044, 
+                                            "y": 130, 
+                                            "z": 1075
+                                        }, 
+                                        {
+                                            "cpid": 7, 
+                                            "radius": 130, 
+                                            "x": 64486, 
+                                            "y": 125, 
+                                            "z": 65312
+                                        }, 
+                                        {
+                                            "cpid": 6, 
+                                            "radius": 140, 
+                                            "x": 64321, 
+                                            "y": 218, 
+                                            "z": 707
+                                        }
+                                    ], 
+                                    "gameMode": "gpm_cq", 
+                                    "layer": "layer_64", 
+                                    "map": "iron_thunder", 
+                                    "playerCount": 100, 
+                                    "ticketsTeam1": 213, 
+                                    "ticketsTeam2": 0
+                                }
+                            ], 
+                            "timesPlayed": 1, 
+                            "winsTeam1": 1, 
+                            "winsTeam2": 0
+                        }, 
+                        {
+                            "averageDuration": 56.62466666666899, 
+                            "averageTicketsTeam1": 0, 
+                            "averageTicketsTeam2": 200, 
+                            "draws": 0, 
+                            "id": "route_14_12_2_1_20_19_17_18", 
+                            "roundsPlayed": [
+                                {
+                                    "completed": true, 
+                                    "date": 1517698090, 
+                                    "duration": 56.62466666666899, 
+                                    "flags": [
+                                        {
+                                            "cpid": 14, 
+                                            "radius": 80, 
+                                            "x": 729, 
+                                            "y": 103, 
+                                            "z": 65167
+                                        }, 
+                                        {
+                                            "cpid": 12, 
+                                            "radius": 100, 
+                                            "x": 859, 
+                                            "y": 150, 
+                                            "z": 513
+                                        }, 
+                                        {
+                                            "cpid": 2, 
+                                            "radius": 70, 
+                                            "x": 1044, 
+                                            "y": 130, 
+                                            "z": 1075
+                                        }, 
+                                        {
+                                            "cpid": 1, 
+                                            "radius": 1, 
+                                            "x": 1479, 
+                                            "y": 101, 
+                                            "z": 1473
+                                        }, 
+                                        {
+                                            "cpid": 20, 
+                                            "radius": 10, 
+                                            "x": 64391, 
+                                            "y": 53, 
+                                            "z": 63857
+                                        }, 
+                                        {
+                                            "cpid": 19, 
+                                            "radius": 10, 
+                                            "x": 63928, 
+                                            "y": 150, 
+                                            "z": 64292
+                                        }, 
+                                        {
+                                            "cpid": 17, 
+                                            "radius": 130, 
+                                            "x": 860, 
+                                            "y": 120, 
+                                            "z": 64008
+                                        }, 
+                                        {
+                                            "cpid": 18, 
+                                            "radius": 130, 
+                                            "x": 65416, 
+                                            "y": 64, 
+                                            "z": 64268
+                                        }
+                                    ], 
+                                    "gameMode": "gpm_cq", 
+                                    "layer": "layer_64", 
+                                    "map": "iron_thunder", 
+                                    "playerCount": 100, 
+                                    "ticketsTeam1": 0, 
+                                    "ticketsTeam2": 200
+                                }
+                            ], 
+                            "timesPlayed": 1, 
+                            "winsTeam1": 0, 
+                            "winsTeam2": 1
+                        }, 
+                        {
+                            "averageDuration": 52.90333333334048, 
+                            "averageTicketsTeam1": 231, 
+                            "averageTicketsTeam2": 0, 
+                            "draws": 0, 
+                            "id": "route_6_7_20_3_19_2_5_1", 
+                            "roundsPlayed": [
+                                {
+                                    "completed": true, 
+                                    "date": 1517929950, 
+                                    "duration": 52.90333333334048, 
+                                    "flags": [
+                                        {
+                                            "cpid": 6, 
+                                            "radius": 140, 
+                                            "x": 64321, 
+                                            "y": 218, 
+                                            "z": 707
+                                        }, 
+                                        {
+                                            "cpid": 7, 
+                                            "radius": 130, 
+                                            "x": 64486, 
+                                            "y": 125, 
+                                            "z": 65312
+                                        }, 
+                                        {
+                                            "cpid": 20, 
+                                            "radius": 10, 
+                                            "x": 64391, 
+                                            "y": 53, 
+                                            "z": 63857
+                                        }, 
+                                        {
+                                            "cpid": 3, 
+                                            "radius": 90, 
+                                            "x": 7, 
+                                            "y": 83, 
+                                            "z": 866
+                                        }, 
+                                        {
+                                            "cpid": 19, 
+                                            "radius": 10, 
+                                            "x": 63928, 
+                                            "y": 150, 
+                                            "z": 64292
+                                        }, 
+                                        {
+                                            "cpid": 2, 
+                                            "radius": 70, 
+                                            "x": 1044, 
+                                            "y": 130, 
+                                            "z": 1075
+                                        }, 
+                                        {
+                                            "cpid": 5, 
+                                            "radius": 60, 
+                                            "x": 64283, 
+                                            "y": 291, 
+                                            "z": 1341
+                                        }, 
+                                        {
+                                            "cpid": 1, 
+                                            "radius": 1, 
+                                            "x": 1479, 
+                                            "y": 101, 
+                                            "z": 1473
+                                        }
+                                    ], 
+                                    "gameMode": "gpm_cq", 
+                                    "layer": "layer_64", 
+                                    "map": "iron_thunder", 
+                                    "playerCount": 100, 
+                                    "ticketsTeam1": 231, 
+                                    "ticketsTeam2": 0
+                                }
+                            ], 
+                            "timesPlayed": 1, 
+                            "winsTeam1": 1, 
+                            "winsTeam2": 0
+                        }
+                    ], 
+                    "timesPlayed": 3, 
+                    "winsTeam1": 2, 
+                    "winsTeam2": 1
+                }
+            ], 
+            "name": "gpm_cq", 
+            "timesPlayed": 3, 
+            "winsTeam1": 2, 
+            "winsTeam2": 1
+        }
+    ], 
+    "name": "iron_thunder", 
+    "timesPlayed": 3, 
+    "winsTeam1": 2, 
+    "winsTeam2": 1
+}

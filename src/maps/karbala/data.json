@@ -1,0 +1,75 @@
+{
+    "averageDuration": 81.38466666666677, 
+    "averageTicketsTeam1": 0, 
+    "averageTicketsTeam2": 113, 
+    "draws": 0, 
+    "gameModes": [
+        {
+            "averageDuration": 81.38466666666677, 
+            "averageTicketsTeam1": 0, 
+            "averageTicketsTeam2": 113, 
+            "draws": 0, 
+            "layers": [
+                {
+                    "averageDuration": 81.38466666666677, 
+                    "averageTicketsTeam1": 0, 
+                    "averageTicketsTeam2": 113, 
+                    "draws": 0, 
+                    "name": "layer_64", 
+                    "routes": [
+                        {
+                            "averageDuration": 81.38466666666677, 
+                            "averageTicketsTeam1": 0, 
+                            "averageTicketsTeam2": 113, 
+                            "draws": 0, 
+                            "id": "route_101_1", 
+                            "roundsPlayed": [
+                                {
+                                    "completed": true, 
+                                    "date": 1517686354, 
+                                    "duration": 81.38466666666677, 
+                                    "flags": [
+                                        {
+                                            "cpid": 101, 
+                                            "radius": 1, 
+                                            "x": 818, 
+                                            "y": 27, 
+                                            "z": 875
+                                        }, 
+                                        {
+                                            "cpid": 1, 
+                                            "radius": 1, 
+                                            "x": 65511, 
+                                            "y": 25, 
+                                            "z": 65309
+                                        }
+                                    ], 
+                                    "gameMode": "gpm_insurgency", 
+                                    "layer": "layer_64", 
+                                    "map": "karbala", 
+                                    "playerCount": 99, 
+                                    "ticketsTeam1": 0, 
+                                    "ticketsTeam2": 113
+                                }
+                            ], 
+                            "timesPlayed": 1, 
+                            "winsTeam1": 0, 
+                            "winsTeam2": 1
+                        }
+                    ], 
+                    "timesPlayed": 1, 
+                    "winsTeam1": 0, 
+                    "winsTeam2": 1
+                }
+            ], 
+            "name": "gpm_insurgency", 
+            "timesPlayed": 1, 
+            "winsTeam1": 0, 
+            "winsTeam2": 1
+        }
+    ], 
+    "name": "karbala", 
+    "timesPlayed": 1, 
+    "winsTeam1": 0, 
+    "winsTeam2": 1
+}

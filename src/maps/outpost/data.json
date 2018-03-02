@@ -1,0 +1,102 @@
+{
+    "averageDuration": 91.92133333332995, 
+    "averageTicketsTeam1": 2, 
+    "averageTicketsTeam2": 21, 
+    "draws": 0, 
+    "gameModes": [
+        {
+            "averageDuration": 91.92133333332995, 
+            "averageTicketsTeam1": 2, 
+            "averageTicketsTeam2": 21, 
+            "draws": 0, 
+            "layers": [
+                {
+                    "averageDuration": 91.92133333332995, 
+                    "averageTicketsTeam1": 2, 
+                    "averageTicketsTeam2": 21, 
+                    "draws": 0, 
+                    "name": "layer_64", 
+                    "routes": [
+                        {
+                            "averageDuration": 91.92133333332995, 
+                            "averageTicketsTeam1": 2, 
+                            "averageTicketsTeam2": 21, 
+                            "draws": 0, 
+                            "id": "route_403_402", 
+                            "roundsPlayed": [
+                                {
+                                    "completed": true, 
+                                    "date": 1517673222, 
+                                    "duration": 116.85199999998945, 
+                                    "flags": [
+                                        {
+                                            "cpid": 403, 
+                                            "radius": 1, 
+                                            "x": 681, 
+                                            "y": 20, 
+                                            "z": 65016
+                                        }, 
+                                        {
+                                            "cpid": 402, 
+                                            "radius": 1, 
+                                            "x": 144, 
+                                            "y": 35, 
+                                            "z": 735
+                                        }
+                                    ], 
+                                    "gameMode": "gpm_insurgency", 
+                                    "layer": "layer_64", 
+                                    "map": "outpost", 
+                                    "playerCount": 99, 
+                                    "ticketsTeam1": 0, 
+                                    "ticketsTeam2": 43
+                                }, 
+                                {
+                                    "completed": true, 
+                                    "date": 1517694021, 
+                                    "duration": 66.99066666667045, 
+                                    "flags": [
+                                        {
+                                            "cpid": 403, 
+                                            "radius": 1, 
+                                            "x": 681, 
+                                            "y": 20, 
+                                            "z": 65016
+                                        }, 
+                                        {
+                                            "cpid": 402, 
+                                            "radius": 1, 
+                                            "x": 144, 
+                                            "y": 35, 
+                                            "z": 735
+                                        }
+                                    ], 
+                                    "gameMode": "gpm_insurgency", 
+                                    "layer": "layer_64", 
+                                    "map": "outpost", 
+                                    "playerCount": 100, 
+                                    "ticketsTeam1": 4, 
+                                    "ticketsTeam2": 0
+                                }
+                            ], 
+                            "timesPlayed": 2, 
+                            "winsTeam1": 1, 
+                            "winsTeam2": 1
+                        }
+                    ], 
+                    "timesPlayed": 2, 
+                    "winsTeam1": 1, 
+                    "winsTeam2": 1
+                }
+            ], 
+            "name": "gpm_insurgency", 
+            "timesPlayed": 2, 
+            "winsTeam1": 1, 
+            "winsTeam2": 1
+        }
+    ], 
+    "name": "outpost", 
+    "timesPlayed": 2, 
+    "winsTeam1": 1, 
+    "winsTeam2": 1
+}

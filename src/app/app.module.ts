@@ -8,7 +8,7 @@ import { MaplistComponent } from './maplist/maplist.component';
 import { AppRoutingModule } from './/app-routing.module';
 import {RouterModule} from '@angular/router';
 import { MapdetailComponent } from './mapdetail/mapdetail.component';
-import { DashboardComponent } from './alerts/dashboard/dashboard.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 import {MapService} from './map.service';
 
 
