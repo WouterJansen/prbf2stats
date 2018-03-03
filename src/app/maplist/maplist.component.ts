@@ -12,8 +12,10 @@ export class MaplistComponent implements OnInit {
 
   maplist;
   roundsplayed = 0;
-  bluforbias = 0;
+  team1balance = 0;
+  team2balance = 0;
   totalteam1 = 0;
+  totalteam2 = 0;
   averagetime = 0;
   constructor(private mapService: MapService) {}
 
@@ -34,10 +36,12 @@ export class MaplistComponent implements OnInit {
     for (const map of maplist.maps) {
       this.roundsplayed = this.roundsplayed + map.timesPlayed;
       this.totalteam1 = this.totalteam1 + map.winsTeam1;
+      this.totalteam2 = this.totalteam2 + map.winsTeam2;
       this.averagetime = this.averagetime + map.averageDuration;
     }
     this.averagetime = this.averagetime / maplist.maps.length;
-    this.bluforbias = parseFloat((this.totalteam1 / this.roundsplayed * 100).toFixed(2));
+    this.team1balance = parseFloat((this.totalteam1 / this.roundsplayed * 100).toFixed(2));
+    this.team2balance = parseFloat((this.totalteam2 / this.roundsplayed * 100).toFixed(2));
   }
 
   public getAllLevels(): void {

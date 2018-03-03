@@ -10,7 +10,6 @@
     <th scope="col">Avg. Tickets Team 2</th>
     <th scope="col"># Wins Team 1</th>
     <th scope="col"># Wins Team 2</th>
-    <th scope="col"># Draws</th>
   </tr>
   </thead>
   <tbody>
@@ -20,9 +19,8 @@
     <td>{{level.averageDuration.toFixed() | number}} min</td>
     <td>{{level.averageTicketsTeam1}}</td>
     <td>{{level.averageTicketsTeam2}}</td>
-    <td>{{level.winsTeam1}}</td>
-    <td>{{level.winsTeam2}}</td>
-    <td>{{level.draws}}</td>
+    <td>{{level.winsTeam1}} ({{level.winsTeam1 / level.timesPlayed * 100 | number}}%)</td>
+    <td>{{level.winsTeam2}} ({{level.winsTeam2 / level.timesPlayed * 100 | number}}%)</td>
   </tr>
   <ng-template ngFor let-gamemode [ngForOf]= "level.gameModes" let-i="index">
     <tr class="gamemode">
@@ -31,9 +29,8 @@
     <td>{{gamemode.averageDuration.toFixed()}} min</td>
     <td>{{gamemode.averageTicketsTeam1}}</td>
     <td>{{gamemode.averageTicketsTeam2}}</td>
-    <td>{{gamemode.winsTeam1}}</td>
-    <td>{{gamemode.winsTeam2}}</td>
-    <td>{{gamemode.draws}}</td>
+    <td>{{gamemode.winsTeam1}} ({{gamemode.winsTeam1 / gamemode.timesPlayed * 100 | number}}%)</td>
+    <td>{{gamemode.winsTeam2}} ({{gamemode.winsTeam2 / gamemode.timesPlayed * 100 | number}}%)</td>
     </tr>
     <ng-template ngFor let-layer [ngForOf]= "gamemode.layers" let-j="index">
       <tr class="layer">
@@ -42,9 +39,8 @@
         <td>{{layer.averageDuration.toFixed()}} min</td>
         <td>{{layer.averageTicketsTeam1}}</td>
         <td>{{layer.averageTicketsTeam2}}</td>
-        <td>{{layer.winsTeam1}}</td>
-        <td>{{layer.winsTeam2}}</td>
-        <td>{{layer.draws}}</td>
+        <td>{{layer.winsTeam1}} ({{layer.winsTeam1 / layer.timesPlayed * 100 | number}}%)</td>
+        <td>{{layer.winsTeam2}} ({{layer.winsTeam2 / layer.timesPlayed * 100 | number}}%)</td>
       </tr>
       <ng-template ngFor let-route [ngForOf]= "layer.routes" let-m="index">
         <tr class="route">
@@ -53,9 +49,8 @@
           <td>{{route.averageDuration.toFixed()}} min</td>
           <td>{{route.averageTicketsTeam1}}</td>
           <td>{{route.averageTicketsTeam2}}</td>
-          <td>{{route.winsTeam1}}</td>
-          <td>{{route.winsTeam2}}</td>
-          <td>{{route.draws}}</td>
+          <td>{{route.winsTeam1}} ({{route.winsTeam1 / route.timesPlayed * 100 | number}}%)</td>
+          <td>{{route.winsTeam2}} ({{route.winsTeam2 / route.timesPlayed * 100 | number}}%)</td>
         </tr>
       </ng-template>
     </ng-template>

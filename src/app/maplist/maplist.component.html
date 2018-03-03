@@ -8,25 +8,25 @@
       <div class="col stat">
         <div class="milestone-counter">
           <i class="fas fa-map fa-3x"></i>
-          <span class="stat-count highlight">{{maplist.maps.length}} maps</span>
+          <span class="stat-count highlight">{{maplist.maps.length}}<br> maps</span>
         </div>
       </div>
       <div class="col stat">
         <div class="milestone-counter">
           <i class="fas fa-hashtag fa-3x"></i>
-          <span class="stat-count highlight">{{roundsplayed}} rounds</span>
+          <span class="stat-count highlight">{{roundsplayed}}<br>Total rounds</span>
         </div>
       </div>
       <div class="col stat">
         <div class="milestone-counter">
           <i class="fas fa-balance-scale fa-3x"></i>
-          <span class="stat-count highlight">{{bluforbias | number}}% balanced</span>
+          <span class="stat-count highlight">{{team1balance | number}}% vs {{team2balance | number}}%<br>Team 1 vs Team 2 </span>
         </div>
       </div>
       <div class="col stat">
         <div class="milestone-counter">
           <i class="fas fa-stopwatch fa-3x"></i>
-          <span class="stat-count highlight">&#x7e;{{averagetime | number}} min</span>
+          <span class="stat-count highlight">{{averagetime | number}} min<br>Average Duration</span>
         </div>
       </div>
     </div>
@@ -41,7 +41,6 @@
       <th scope="col">Avg. Tickets Team 2</th>
       <th scope="col"># Wins Team 1</th>
       <th scope="col"># Wins Team 2</th>
-      <th scope="col"># Draws</th>
     </tr>
     </thead>
     <tbody>
@@ -54,9 +53,8 @@
         <td>{{level.averageDuration.toFixed()}} min</td>
         <td>{{level.averageTicketsTeam1}}</td>
         <td>{{level.averageTicketsTeam2}}</td>
-        <td>{{level.winsTeam1}}</td>
-        <td>{{level.winsTeam2}}</td>
-        <td>{{level.draws}}</td>
+        <td>{{level.winsTeam1}} ({{level.winsTeam1 / level.timesPlayed * 100 | number}}%)</td>
+        <td>{{level.winsTeam2}} ({{level.winsTeam2 / level.timesPlayed * 100 | number}}%)</td>
       </tr>
     </ng-template>
     </tbody>
