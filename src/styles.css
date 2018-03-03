@@ -6,21 +6,32 @@ body {
 .navbar-default {
   background-color: #111;
   border-color: #111;
-}
-
-.navbar-brand {
-  font-size: 150%;
+  height: 70px;
 }
 /* Title */
 .navbar-default .navbar-brand {
   color: #39c;
+  font-size: 20px;
+  font-weight: 400;
 }
 .navbar-default .navbar-brand:hover,
 .navbar-default .navbar-brand:focus {
   color: #39c;
 }
+
+.nav-link:hover {
+  background-color: rgba(51, 50, 52, 0.99);
+  color: #39c;
+  transition: background .2s;
+  transition-property: background;
+  transition-duration: 0.2s;
+  transition-timing-function: initial;
+  transition-delay: initial;
+}
 /* Link */
 .navbar-default .navbar-nav > li > a {
+  display: block;
+  padding: 15px;
   color: #39c;
 }
 
@@ -43,7 +54,7 @@ body {
 }
 
 div {
-  padding-top: 10px;
+  padding-top: 4px;
   padding-left: 10px;
   padding-right: 10px;
 }
