@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Level } from '../level';
 import { ActivatedRoute } from '@angular/router';
 import {MapService} from '../map.service';
+import {MatTableDataSource} from '@angular/material';
 
 @Component({
   selector: 'app-mapdetail',
@@ -10,15 +11,20 @@ import {MapService} from '../map.service';
 })
 export class MapdetailComponent implements OnInit {
 
-  level: Level;
+  level;
   mapName: string;
   data: object;
+  dataSource;
+  displayedColumns = ['name', 'timesPlayed', 'averageDuration', 'averageTicketsTeam1',
+    'averageTicketsTeam2', 'winsTeam1', 'winsTeam2'];
 
-  constructor(    private route: ActivatedRoute,
-                  private mapService: MapService) { }
+  constructor( private route: ActivatedRoute, private mapService: MapService) {
+    this.dataSource = new MatTableDataSource();
+  }
 
   ngOnInit() {
     this.getLevel();
+    this.dataSource = new MatTableDataSource(this.level);
   }
 
   getLevel(): void {

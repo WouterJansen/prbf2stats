@@ -1,14 +1,12 @@
-import { Component, OnInit } from '@angular/core';
-import 'rxjs/add/operator/map';
+import {AfterViewInit, Component, OnInit, ViewChild} from '@angular/core';
+import {MatSort, MatTableDataSource} from '@angular/material';
 import {MapService} from '../map.service';
-import {Level} from '../level';
-
 @Component({
   selector: 'app-maplist',
   templateUrl: './maplist.component.html',
   styleUrls: ['./maplist.component.css']
 })
-export class MaplistComponent implements OnInit {
+export class MaplistComponent implements OnInit, AfterViewInit {
 
   maplist;
   roundsplayed = 0;
@@ -17,13 +15,18 @@ export class MaplistComponent implements OnInit {
   totalteam1 = 0;
   totalteam2 = 0;
   averagetime = 0;
-  constructor(private mapService: MapService) {}
+  displayedColumns = ['name', 'timesPlayed', 'averageDuration', 'averageTicketsTeam1',
+    'averageTicketsTeam2', 'winsTeam1', 'winsTeam2'];
+  dataSource;
+
+  @ViewChild(MatSort) sort: MatSort;
+
+  constructor(private mapService: MapService) {
+    this.dataSource = new MatTableDataSource();
+  }
 
   ngOnInit() {
     this.getAllLevels();
-    for (const map of this.maplist.maps) {
-      this.roundsplayed = this.roundsplayed + map.timesPlayed;
-    }
   }
 
   getdata(maplist) {
@@ -42,9 +45,20 @@ export class MaplistComponent implements OnInit {
     this.averagetime = this.averagetime / maplist.maps.length;
     this.team1balance = parseFloat((this.totalteam1 / this.roundsplayed * 100).toFixed(2));
     this.team2balance = parseFloat((this.totalteam2 / this.roundsplayed * 100).toFixed(2));
+    this.dataSource = new MatTableDataSource(this.maplist.maps);
   }
 
   public getAllLevels(): void {
     this.mapService.getAllLevels().subscribe(maplist => this.getdata(maplist));
+  }
+
+  ngAfterViewInit() {
+    this.dataSource.sort = this.sort;
+  }
+
+  applyFilter(filterValue: string) {
+    filterValue = filterValue.trim();
+    filterValue = filterValue.toLowerCase();
+    this.dataSource.filter = filterValue;
   }
 }

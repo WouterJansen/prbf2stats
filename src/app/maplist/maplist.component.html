@@ -1,62 +1,85 @@
-<div><h1 class="display-4">Maps</h1>
-<p class="lead">
-  Last generated on {{maplist.date}}. <br />
-  Click on a map's name for detailed statistics.
-</p>
-  <div class="container">
-    <div class="row">
+<div>
+  <mat-grid-list cols="4" rowHeight="160px">
+    <mat-grid-tile>
       <div class="col stat">
         <div class="milestone-counter">
           <i class="fas fa-map fa-3x"></i>
-          <span class="stat-count highlight">{{maplist.maps.length}}<br> maps</span>
+          <h1 class="stat-count mat-h1">{{maplist.maps.length}}<br> maps</h1>
         </div>
       </div>
+    </mat-grid-tile>
+    <mat-grid-tile>
       <div class="col stat">
         <div class="milestone-counter">
           <i class="fas fa-hashtag fa-3x"></i>
-          <span class="stat-count highlight">{{roundsplayed}}<br>Total rounds</span>
+          <h1 class="stat-count mat-h1">{{roundsplayed}}<br>Total rounds</h1>
         </div>
       </div>
+    </mat-grid-tile>
+    <mat-grid-tile>
       <div class="col stat">
         <div class="milestone-counter">
           <i class="fas fa-balance-scale fa-3x"></i>
-          <span class="stat-count highlight">{{team1balance | number}}% vs {{team2balance | number}}%<br>Team 1 vs Team 2 </span>
+          <h1 class="stat-count mat-h1">{{team1balance | number}}% vs {{team2balance | number}}%<br>Team 1 vs Team 2 </h1>
         </div>
       </div>
+    </mat-grid-tile>
+    <mat-grid-tile>
       <div class="col stat">
         <div class="milestone-counter">
           <i class="fas fa-stopwatch fa-3x"></i>
-          <span class="stat-count highlight">{{averagetime | number}} min<br>Average Duration</span>
+          <h1 class="stat-count mat-h1">{{averagetime | number}} min<br>Average Duration</h1>
         </div>
       </div>
-    </div>
-  </div>
-  <table class="table">
-    <thead>
-    <tr class="header">
-      <th scope="col">Name</th>
-      <th scope="col"># Played</th>
-      <th scope="col">Avg. Duration</th>
-      <th scope="col">Avg. Tickets Team 1</th>
-      <th scope="col">Avg. Tickets Team 2</th>
-      <th scope="col"># Wins Team 1</th>
-      <th scope="col"># Wins Team 2</th>
-    </tr>
-    </thead>
-    <tbody>
-    <ng-template ngFor let-level [ngForOf]= "maplist.maps" let-i="index">
-      <tr class="gamemode">
-        <th><a routerLink="/maps/detail/{{level.name}}">
-          <span>{{level.name}}</span>
-        </a></th>
-        <td>{{level.timesPlayed}}</td>
-        <td>{{level.averageDuration.toFixed()}} min</td>
-        <td>{{level.averageTicketsTeam1}}</td>
-        <td>{{level.averageTicketsTeam2}}</td>
-        <td>{{level.winsTeam1}} ({{level.winsTeam1 / level.timesPlayed * 100 | number}}%)</td>
-        <td>{{level.winsTeam2}} ({{level.winsTeam2 / level.timesPlayed * 100 | number}}%)</td>
-      </tr>
-    </ng-template>
-    </tbody>
-  </table>
-</div>
+    </mat-grid-tile></mat-grid-list></div>
+
+<mat-form-field>
+  <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter Map">
+</mat-form-field>
+
+<p >
+  Last generated on {{maplist.date}}. Click on a map's name for detailed statistics.
+</p>
+<mat-table [dataSource]="dataSource" matSort>
+
+  <ng-container matColumnDef="name">
+    <mat-header-cell *matHeaderCellDef mat-sort-header> Name </mat-header-cell>
+    <mat-cell *matCellDef="let row"> <a routerLink="/maps/detail/{{row.name}}">
+      <span>{{row.name}}</span>
+    </a> </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="timesPlayed">
+    <mat-header-cell *matHeaderCellDef mat-sort-header> # Played </mat-header-cell>
+    <mat-cell *matCellDef="let row"> {{row.timesPlayed}} </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="averageDuration">
+    <mat-header-cell *matHeaderCellDef mat-sort-header> Average Duration </mat-header-cell>
+    <mat-cell *matCellDef="let row"> {{row.averageDuration.toFixed()}} min </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="averageTicketsTeam1">
+    <mat-header-cell *matHeaderCellDef mat-sort-header> Average Tickets Team 1 </mat-header-cell>
+    <mat-cell *matCellDef="let row"> {{row.averageTicketsTeam1}} </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="averageTicketsTeam2">
+    <mat-header-cell *matHeaderCellDef mat-sort-header> Average Tickets Team 2 </mat-header-cell>
+    <mat-cell *matCellDef="let row"> {{row.averageTicketsTeam2}} </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="winsTeam1">
+    <mat-header-cell *matHeaderCellDef> Wins Team 1 </mat-header-cell>
+    <mat-cell *matCellDef="let row"> {{row.winsTeam1}} ({{row.winsTeam1 / row.timesPlayed * 100 | number}}%) </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="winsTeam2">
+    <mat-header-cell *matHeaderCellDef> Wins Team 2 </mat-header-cell>
+    <mat-cell *matCellDef="let row"> {{row.winsTeam2}} ({{row.winsTeam2 / row.timesPlayed * 100 | number}}%) </mat-cell>
+  </ng-container>
+
+  <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+  <mat-row *matRowDef="let row; columns: displayedColumns;">
+  </mat-row>
+</mat-table>

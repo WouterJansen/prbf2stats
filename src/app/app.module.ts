@@ -1,27 +1,28 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
-import { AlertsComponent } from './alerts/alerts.component';
 import { MaplistComponent } from './maplist/maplist.component';
 import { AppRoutingModule } from './/app-routing.module';
 import {RouterModule} from '@angular/router';
 import { MapdetailComponent } from './mapdetail/mapdetail.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import {MapService} from './map.service';
-
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {MatButtonModule, MatToolbarModule, MatGridListModule,
+  MatFormFieldModule, MatTableModule, MatSortModule , MatInputModule} from '@angular/material';
 
 @NgModule({
   declarations: [
     AppComponent,
-    AlertsComponent,
     MaplistComponent,
     MapdetailComponent,
-    DashboardComponent
+    DashboardComponent,
   ],
   imports: [
-    RouterModule, BrowserModule, HttpClientModule, NgbModule.forRoot(), AppRoutingModule
+    RouterModule, BrowserModule, BrowserAnimationsModule,
+    MatButtonModule, MatToolbarModule, HttpClientModule, MatInputModule, MatGridListModule,
+    MatFormFieldModule, MatTableModule, MatSortModule, AppRoutingModule
   ],
   providers: [MapService],
   bootstrap: [AppComponent]

@@ -20,7 +20,9 @@
       "testTsconfig": "tsconfig.spec.json",
       "prefix": "app",
       "styles": [
-        "styles.css"
+        "projectreality.scss",
+        "styles.css",
+        "variables.less"
       ],
       "scripts": [],
       "environmentSource": "environments/environment.ts",
