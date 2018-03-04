@@ -3,22 +3,8 @@
   text-align:center;
 
 }
-.highlight {
-  color: #ffffff;
-  padding:20px 0;
-  font-weight:bold;
-  display:block;
-  overflow:hidden;
-  margin-bottom:0;
-  font-size:25px;
-}
 .stat i {
   color:#39c;
-}
-.milestone-details {
-  font-weight:bold;
-  font-size:12px;
-  color: #c0c0c0;
 }
 
 .mat-cell {
@@ -26,10 +12,6 @@
 }
 .mat-header-row, .mat-row{
   color: #d7d7d7;
-}
-
-a {
-  color:#39c;
 }
 
 .mat-placeholder {
@@ -46,4 +28,8 @@ a {
 
 .mat-form-field{
   padding-left: 10px;
+}
+
+.maplist{
+  padding-top: 60px;
 }

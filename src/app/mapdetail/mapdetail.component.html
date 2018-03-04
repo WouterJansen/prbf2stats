@@ -1,135 +1,76 @@
-<br>
-<h1 class="mat-display-2">&nbsp;&nbsp;&nbsp;{{mapName}} details</h1>
-<mat-card>
-  <mat-card-content>
-    <mat-tab-group class="demo-tab-group">
-      <ng-template ngFor let-version [ngForOf]="versions" let-i="index">
-        <mat-tab label="{{version}}">
-          <div class="demo-tab-content">
-            <table class="table table-hover">
-              <thead>
-              <tr class="header">
-              <th scope="col"></th>
-              <th scope="col"># Played</th>
-              <th scope="col">Avg. Duration</th>
-              <th scope="col">Avg. Tickets Team 1</th>
-              <th scope="col">Avg. Tickets Team 2</th>
-              <th scope="col"># Wins Team 1</th>
-              <th scope="col"># Wins Team 2</th>
-              </tr>
-              </thead>
-              <tbody>
-              <tr>
-              <td>{{mapName}}</td>
-              <td>{{levels[i].timesPlayed}}</td>
-              <td>{{levels[i].averageDuration.toFixed() | number}} min</td>
-              <td>{{levels[i].averageTicketsTeam1}}</td>
-              <td>{{levels[i].averageTicketsTeam2}}</td>
-              <td>{{levels[i].winsTeam1}} ({{levels[i].winsTeam1 / levels[i].timesPlayed * 100 | number}}%)</td>
-              <td>{{levels[i].winsTeam2}} ({{levels[i].winsTeam2 / levels[i].timesPlayed * 100 | number}}%)</td>
-              </tr>
-              <ng-template ngFor let-gamemode [ngForOf]="levels[i].gameModes" let-i="index">
-              <tr>
-              <td>&nbsp;<i class="material-icons">subdirectory_arrow_right</i>{{gamemode.name}}</td>
-              <td>{{gamemode.timesPlayed}}</td>
-              <td>{{gamemode.averageDuration.toFixed()}} min</td>
-              <td>{{gamemode.averageTicketsTeam1}}</td>
-              <td>{{gamemode.averageTicketsTeam2}}</td>
-              <td>{{gamemode.winsTeam1}} ({{gamemode.winsTeam1 / gamemode.timesPlayed * 100 | number}}%)</td>
-              <td>{{gamemode.winsTeam2}} ({{gamemode.winsTeam2 / gamemode.timesPlayed * 100 | number}}%)</td>
-              </tr>
-              <ng-template ngFor let-layer [ngForOf]="gamemode.layers" let-j="index">
-              <tr>
-              <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i class="material-icons">subdirectory_arrow_right</i>{{layer.name}}</td>
-              <td>{{layer.timesPlayed}}</td>
-              <td>{{layer.averageDuration.toFixed()}} min</td>
-              <td>{{layer.averageTicketsTeam1}}</td>
-              <td>{{layer.averageTicketsTeam2}}</td>
-              <td>{{layer.winsTeam1}} ({{layer.winsTeam1 / layer.timesPlayed * 100 | number}}%)</td>
-              <td>{{layer.winsTeam2}} ({{layer.winsTeam2 / layer.timesPlayed * 100 | number}}%)</td>
-              </tr>
-              <ng-template ngFor let-route [ngForOf]="layer.routes" let-m="index">
-              <tr>
-              <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i class="material-icons">subdirectory_arrow_right</i>{{route.id}}</td>
-              <td>{{route.timesPlayed}}</td>
-              <td>{{route.averageDuration.toFixed()}} min</td>
-              <td>{{route.averageTicketsTeam1}}</td>
-              <td>{{route.averageTicketsTeam2}}</td>
-              <td>{{route.winsTeam1}} ({{route.winsTeam1 / route.timesPlayed * 100 | number}}%)</td>
-              <td>{{route.winsTeam2}} ({{route.winsTeam2 / route.timesPlayed * 100 | number}}%)</td>
-              </tr>
-              </ng-template>
-              </ng-template>
-              </ng-template>
-              </tbody>
+<div class="mapdetail">
+  <h2 class="mat-display-1">Statistics</h2>
+  <mat-card>
+    <mat-card-content>
+      <mat-tab-group class="demo-tab-group">
+        <ng-template ngFor let-version [ngForOf]="versions" let-i="index">
+          <mat-tab label="{{version}}">
+            <div class="demo-tab-content">
+              <table class="table table-hover">
+                <thead>
+                <tr class="header">
+                  <th scope="col"></th>
+                  <th scope="col"># Played</th>
+                  <th scope="col">Avg. Duration</th>
+                  <th scope="col">Avg. Tickets Team 1</th>
+                  <th scope="col">Avg. Tickets Team 2</th>
+                  <th scope="col"># Wins Team 1</th>
+                  <th scope="col"># Wins Team 2</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                  <td>{{mapName}}</td>
+                  <td>{{levels[i].timesPlayed}}</td>
+                  <td>{{levels[i].averageDuration.toFixed() | number}} min</td>
+                  <td>{{levels[i].averageTicketsTeam1}}</td>
+                  <td>{{levels[i].averageTicketsTeam2}}</td>
+                  <td>{{levels[i].winsTeam1}} ({{levels[i].winsTeam1 / levels[i].timesPlayed * 100 | number}}%)</td>
+                  <td>{{levels[i].winsTeam2}} ({{levels[i].winsTeam2 / levels[i].timesPlayed * 100 | number}}%)</td>
+                </tr>
+                <ng-template ngFor let-gamemode [ngForOf]="levels[i].gameModes" let-i="index">
+                  <tr>
+                    <td>&nbsp;<i class="material-icons">subdirectory_arrow_right</i>{{gamemode.name}}</td>
+                    <td>{{gamemode.timesPlayed}}</td>
+                    <td>{{gamemode.averageDuration.toFixed()}} min</td>
+                    <td>{{gamemode.averageTicketsTeam1}}</td>
+                    <td>{{gamemode.averageTicketsTeam2}}</td>
+                    <td>{{gamemode.winsTeam1}} ({{gamemode.winsTeam1 / gamemode.timesPlayed * 100 | number}}%)</td>
+                    <td>{{gamemode.winsTeam2}} ({{gamemode.winsTeam2 / gamemode.timesPlayed * 100 | number}}%)</td>
+                  </tr>
+                  <ng-template ngFor let-layer [ngForOf]="gamemode.layers" let-j="index">
+                    <tr>
+                      <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i class="material-icons">subdirectory_arrow_right</i>{{layer.name}}
+                      </td>
+                      <td>{{layer.timesPlayed}}</td>
+                      <td>{{layer.averageDuration.toFixed()}} min</td>
+                      <td>{{layer.averageTicketsTeam1}}</td>
+                      <td>{{layer.averageTicketsTeam2}}</td>
+                      <td>{{layer.winsTeam1}} ({{layer.winsTeam1 / layer.timesPlayed * 100 | number}}%)</td>
+                      <td>{{layer.winsTeam2}} ({{layer.winsTeam2 / layer.timesPlayed * 100 | number}}%)</td>
+                    </tr>
+                    <ng-template ngFor let-route [ngForOf]="layer.routes" let-m="index">
+                      <tr>
+                        <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i class="material-icons">subdirectory_arrow_right</i>{{route.id}}
+                        </td>
+                        <td>{{route.timesPlayed}}</td>
+                        <td>{{route.averageDuration.toFixed()}} min</td>
+                        <td>{{route.averageTicketsTeam1}}</td>
+                        <td>{{route.averageTicketsTeam2}}</td>
+                        <td>{{route.winsTeam1}} ({{route.winsTeam1 / route.timesPlayed * 100 | number}}%)</td>
+                        <td>{{route.winsTeam2}} ({{route.winsTeam2 / route.timesPlayed * 100 | number}}%)</td>
+                      </tr>
+                    </ng-template>
+                  </ng-template>
+                </ng-template>
+                </tbody>
               </table>
-          </div>
-        </mat-tab>
-      </ng-template>
-    </mat-tab-group>
-  </mat-card-content>
-</mat-card>
-<!--<div *ngIf="level">-->
-  <!--<br>-->
-  <!--<h1 class="mat-display-1">{{mapName}} details </h1>-->
-  <!--<div class="shadow-z-1">-->
-    <!--<table class="table table-hover">-->
-      <!--<thead>-->
-      <!--<tr class="header">-->
-        <!--<th scope="col"></th>-->
-        <!--<th scope="col"># Played</th>-->
-        <!--<th scope="col">Avg. Duration</th>-->
-        <!--<th scope="col">Avg. Tickets Team 1</th>-->
-        <!--<th scope="col">Avg. Tickets Team 2</th>-->
-        <!--<th scope="col"># Wins Team 1</th>-->
-        <!--<th scope="col"># Wins Team 2</th>-->
-      <!--</tr>-->
-      <!--</thead>-->
-      <!--<tbody>-->
-      <!--<tr>-->
-        <!--<td>{{mapName}}</td>-->
-        <!--<td>{{level.timesPlayed}}</td>-->
-        <!--<td>{{level.averageDuration.toFixed() | number}} min</td>-->
-        <!--<td>{{level.averageTicketsTeam1}}</td>-->
-        <!--<td>{{level.averageTicketsTeam2}}</td>-->
-        <!--<td>{{level.winsTeam1}} ({{level.winsTeam1 / level.timesPlayed * 100 | number}}%)</td>-->
-        <!--<td>{{level.winsTeam2}} ({{level.winsTeam2 / level.timesPlayed * 100 | number}}%)</td>-->
-      <!--</tr>-->
-      <!--<ng-template ngFor let-gamemode [ngForOf]="level.gameModes" let-i="index">-->
-        <!--<tr>-->
-          <!--<td>&nbsp;<i class="material-icons">subdirectory_arrow_right</i>{{gamemode.name}}</td>-->
-          <!--<td>{{gamemode.timesPlayed}}</td>-->
-          <!--<td>{{gamemode.averageDuration.toFixed()}} min</td>-->
-          <!--<td>{{gamemode.averageTicketsTeam1}}</td>-->
-          <!--<td>{{gamemode.averageTicketsTeam2}}</td>-->
-          <!--<td>{{gamemode.winsTeam1}} ({{gamemode.winsTeam1 / gamemode.timesPlayed * 100 | number}}%)</td>-->
-          <!--<td>{{gamemode.winsTeam2}} ({{gamemode.winsTeam2 / gamemode.timesPlayed * 100 | number}}%)</td>-->
-        <!--</tr>-->
-        <!--<ng-template ngFor let-layer [ngForOf]="gamemode.layers" let-j="index">-->
-          <!--<tr>-->
-            <!--<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i class="material-icons">subdirectory_arrow_right</i>{{layer.name}}</td>-->
-            <!--<td>{{layer.timesPlayed}}</td>-->
-            <!--<td>{{layer.averageDuration.toFixed()}} min</td>-->
-            <!--<td>{{layer.averageTicketsTeam1}}</td>-->
-            <!--<td>{{layer.averageTicketsTeam2}}</td>-->
-            <!--<td>{{layer.winsTeam1}} ({{layer.winsTeam1 / layer.timesPlayed * 100 | number}}%)</td>-->
-            <!--<td>{{layer.winsTeam2}} ({{layer.winsTeam2 / layer.timesPlayed * 100 | number}}%)</td>-->
-          <!--</tr>-->
-          <!--<ng-template ngFor let-route [ngForOf]="layer.routes" let-m="index">-->
-            <!--<tr>-->
-              <!--<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i class="material-icons">subdirectory_arrow_right</i>{{route.id}}</td>-->
-              <!--<td>{{route.timesPlayed}}</td>-->
-              <!--<td>{{route.averageDuration.toFixed()}} min</td>-->
-              <!--<td>{{route.averageTicketsTeam1}}</td>-->
-              <!--<td>{{route.averageTicketsTeam2}}</td>-->
-              <!--<td>{{route.winsTeam1}} ({{route.winsTeam1 / route.timesPlayed * 100 | number}}%)</td>-->
-              <!--<td>{{route.winsTeam2}} ({{route.winsTeam2 / route.timesPlayed * 100 | number}}%)</td>-->
-            <!--</tr>-->
-          <!--</ng-template>-->
-        <!--</ng-template>-->
-      <!--</ng-template>-->
-      <!--</tbody>-->
-
-    <!--</table>-->
-  <!--</div>-->
-<!--</div>-->
+            </div>
+          </mat-tab>
+        </ng-template>
+      </mat-tab-group>
+    </mat-card-content>
+  </mat-card>
+  <h2 class="mat-display-1">Heatmaps</h2>
+  <p>Coming soon!</p>
+</div>

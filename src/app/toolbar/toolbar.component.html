@@ -1,0 +1,14 @@
+<mat-toolbar class="toolbar">
+  <i class="material-icons" *ngIf="show" (click)="backClicked()">arrow_back</i>
+  <div class="header-text">
+    <div class="title"  (click)="updateTitles()">{{title}}</div>
+    <div class="sub-title" (click)="updateTitles()">{{subtitle}}</div>
+  </div>
+  <!-- Navigation -->
+  <nav class="links">
+    <a href="http://www.realitymod.com/mapgallery/" class="link">Map Gallery</a>
+    <a href="http://www.realitymod.com/prspy/" class="link">PRSPY</a>
+    <a href="http://www.realitymod.com/forum/" class="link">Forums</a>
+  </nav>
+  <span></span>
+</mat-toolbar>

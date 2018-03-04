@@ -1,4 +1,4 @@
-<div>
+<div class="maplist">
   <mat-grid-list cols="4" rowHeight="160px">
     <mat-grid-tile>
       <div class="col stat">
@@ -37,14 +37,13 @@
   <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Search map">
 </mat-form-field>
 
-<p >
-  &nbsp;&nbsp;Last generated on {{maplist.date}}. Click on a map's name for detailed statistics.
+<p >Last generated on {{maplist.date}}. Click on a map's name for detailed statistics.
 </p>
 <mat-table [dataSource]="dataSource" matSort>
 
   <ng-container matColumnDef="name">
     <mat-header-cell *matHeaderCellDef mat-sort-header> Name </mat-header-cell>
-    <mat-cell *matCellDef="let row"> <a routerLink="/maps/detail/{{row.name}}">
+    <mat-cell *matCellDef="let row"> <a routerLink="/statistics/maps/{{row.name}}">
       <span>{{row.name}}</span>
     </a> </mat-cell>
   </ng-container>

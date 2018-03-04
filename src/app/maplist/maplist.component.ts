@@ -1,6 +1,7 @@
 import {AfterViewInit, Component, OnInit, ViewChild} from '@angular/core';
 import {MatSort, MatTableDataSource} from '@angular/material';
 import {MapService} from '../map.service';
+import {ToolbarService} from '../toolbar.service';
 @Component({
   selector: 'app-maplist',
   templateUrl: './maplist.component.html',
@@ -21,12 +22,15 @@ export class MaplistComponent implements OnInit, AfterViewInit {
 
   @ViewChild(MatSort) sort: MatSort;
 
-  constructor(private mapService: MapService) {
+  constructor(private mapService: MapService, private toolbarService: ToolbarService) {
     this.dataSource = new MatTableDataSource();
   }
 
   ngOnInit() {
     this.getAllLevels();
+    this.toolbarService.setTitle('maps');
+    this.toolbarService.setSubtitle('overview');
+    this.toolbarService.showArrow();
   }
 
   getdata(maplist) {

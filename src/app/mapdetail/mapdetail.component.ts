@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import {MapService} from '../map.service';
+import {ToolbarService} from '../toolbar.service';
 
 @Component({
   selector: 'app-mapdetail',
@@ -13,13 +14,15 @@ export class MapdetailComponent implements OnInit {
   mapName: string;
   versions = [];
 
-  constructor(private route: ActivatedRoute, private mapService: MapService) {
+  constructor(private route: ActivatedRoute, private mapService: MapService, private toolbarService: ToolbarService) {
   }
 
   ngOnInit() {
     this.mapName = this.route.snapshot.paramMap.get('mapName');
     this.getVersions();
-
+    this.toolbarService.setTitle('Map Details');
+    this.toolbarService.setSubtitle(this.mapName);
+    this.toolbarService.showArrow();
   }
 
   getVersions(): void {

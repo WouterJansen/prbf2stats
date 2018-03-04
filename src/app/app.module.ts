@@ -11,6 +11,8 @@ import {MapService} from './map.service';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatButtonModule, MatCardModule, MatTabsModule, MatToolbarModule, MatGridListModule,
   MatFormFieldModule, MatTableModule, MatSortModule , MatInputModule} from '@angular/material';
+import { ToolbarComponent } from './toolbar/toolbar.component';
+import {ToolbarService} from './toolbar.service';
 
 @NgModule({
   declarations: [
@@ -18,13 +20,14 @@ import {MatButtonModule, MatCardModule, MatTabsModule, MatToolbarModule, MatGrid
     MaplistComponent,
     MapdetailComponent,
     DashboardComponent,
+    ToolbarComponent,
   ],
   imports: [
     RouterModule, BrowserModule, BrowserAnimationsModule,
     MatButtonModule, MatToolbarModule, MatCardModule, MatTabsModule, HttpClientModule, MatInputModule, MatGridListModule,
     MatFormFieldModule, MatTableModule, MatSortModule, AppRoutingModule
   ],
-  providers: [MapService],
+  providers: [MapService, ToolbarService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

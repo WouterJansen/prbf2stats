@@ -5,10 +5,10 @@ import {DashboardComponent} from './dashboard/dashboard.component';
 import {MapdetailComponent} from './mapdetail/mapdetail.component';
 
 const routes: Routes = [
-  { path: 'maps', component: MaplistComponent },
-  { path: 'dashboard', component: DashboardComponent },
-  { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
-  { path: 'maps/detail/:mapName', component: MapdetailComponent },
+  { path: 'statistics/maps', component: MaplistComponent },
+  { path: 'statistics', component: DashboardComponent },
+  { path: '', redirectTo: '/statistics', pathMatch: 'full' },
+  { path: 'statistics/maps/:mapName', component: MapdetailComponent },
 ];
 
 @NgModule({
