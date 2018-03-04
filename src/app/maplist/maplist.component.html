@@ -34,11 +34,11 @@
     </mat-grid-tile></mat-grid-list></div>
 
 <mat-form-field>
-  <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter Map">
+  <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Search map">
 </mat-form-field>
 
 <p >
-  Last generated on {{maplist.date}}. Click on a map's name for detailed statistics.
+  &nbsp;&nbsp;Last generated on {{maplist.date}}. Click on a map's name for detailed statistics.
 </p>
 <mat-table [dataSource]="dataSource" matSort>
 

@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Level } from '../level';
 import { ActivatedRoute } from '@angular/router';
 import {MapService} from '../map.service';
-import {MatTableDataSource} from '@angular/material';
 
 @Component({
   selector: 'app-mapdetail',
@@ -11,25 +9,32 @@ import {MatTableDataSource} from '@angular/material';
 })
 export class MapdetailComponent implements OnInit {
 
-  level;
+  levels = [];
   mapName: string;
-  data: object;
-  dataSource;
-  displayedColumns = ['name', 'timesPlayed', 'averageDuration', 'averageTicketsTeam1',
-    'averageTicketsTeam2', 'winsTeam1', 'winsTeam2'];
+  versions = [];
 
-  constructor( private route: ActivatedRoute, private mapService: MapService) {
-    this.dataSource = new MatTableDataSource();
+  constructor(private route: ActivatedRoute, private mapService: MapService) {
   }
 
   ngOnInit() {
-    this.getLevel();
-    this.dataSource = new MatTableDataSource(this.level);
+    this.mapName = this.route.snapshot.paramMap.get('mapName');
+    this.getVersions();
+
   }
 
-  getLevel(): void {
-    this.mapName = this.route.snapshot.paramMap.get('mapName');
-    this.mapService.getLevel(this.route.snapshot.paramMap.get('mapName')).subscribe(level => this.level = level);
+  getVersions(): void {
+    this.mapService.getAllLevels().subscribe(maplist => {
+      for (const map of maplist.maps) {
+        if (map.name === this.mapName) {
+          this.versions = map.versions;
+        }
+      }
+      for (const version of this.versions) {
+        this.mapService.getLevel(version + '/' + this.mapName)
+          .subscribe(level => this.levels.push(level));
+      }
+    }
+    );
   }
 
 }

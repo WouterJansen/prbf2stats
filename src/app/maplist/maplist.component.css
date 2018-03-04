@@ -43,3 +43,7 @@ a {
 .mat-header-cell{
   font-size:14px;
 }
+
+.mat-form-field{
+  padding-left: 10px;
+}
