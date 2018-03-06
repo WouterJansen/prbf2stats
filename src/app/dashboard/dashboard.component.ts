@@ -7,7 +7,7 @@ import { Component } from '@angular/core';
 })
 
 export class DashboardComponent {
-  pageTitle = 'Project Reality : Statistics';
+  pageTitle = 'Project Reality: Statistics';
   pageSubtitle = '';
   pageArrow = false;
   pageLink = '';
