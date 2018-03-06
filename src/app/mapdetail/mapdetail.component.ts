@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import {MapService} from '../map.service';
-import {ToolbarService} from '../toolbar.service';
 
 @Component({
   selector: 'app-mapdetail',
@@ -13,16 +12,17 @@ export class MapdetailComponent implements OnInit {
   levels = [];
   mapName: string;
   versions = [];
-
-  constructor(private route: ActivatedRoute, private mapService: MapService, private toolbarService: ToolbarService) {
+  pageTitle = 'Map Details';
+  pageSubtitle = 'mapname';
+  pageArrow = true;
+  pageLink = '/statistics/maps';
+  constructor(private route: ActivatedRoute, private mapService: MapService) {
   }
 
   ngOnInit() {
     this.mapName = this.route.snapshot.paramMap.get('mapName');
+    this.pageSubtitle = this.route.snapshot.paramMap.get('mapName');
     this.getVersions();
-    this.toolbarService.setTitle('Map Details');
-    this.toolbarService.setSubtitle(this.mapName);
-    this.toolbarService.showArrow();
   }
 
   getVersions(): void {

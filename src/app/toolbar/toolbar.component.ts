@@ -1,6 +1,4 @@
-import {Component} from '@angular/core';
-import {ToolbarService} from '../toolbar.service';
-import {Location} from '@angular/common';
+import {Component, Input, Output, EventEmitter} from '@angular/core';
 
 @Component({
   selector: 'app-toolbar',
@@ -9,21 +7,60 @@ import {Location} from '@angular/common';
 })
 export class ToolbarComponent {
 
-  title: string;
-  subtitle: string;
-  show = false;
-  constructor(private toolbarService: ToolbarService, private _location: Location) {
-    this.title = 'Project Reality: Statistics';
+  toolbarTitle;
+  toolbarSubtitle;
+  toolbarArrow;
+  toolbarLink;
+
+  constructor() {
   }
 
-  updateTitles(): void {
-    this.title = this.toolbarService.getTitle();
-    this.subtitle = this.toolbarService.getSubtitle();
-    this.show = this.toolbarService.getArrow();
+  @Output() titleChange = new EventEmitter();
+
+  @Input()
+  get title() {
+    return this.toolbarTitle;
   }
 
-  backClicked() {
-    this._location.back();
+  set title(val) {
+    this.toolbarTitle = val;
+    this.titleChange.emit(this.toolbarTitle);
+  }
+
+  @Output() subtitleChange = new EventEmitter();
+
+  @Input()
+  get subtitle() {
+    return this.toolbarTitle;
+  }
+
+  set subtitle(val) {
+    this.toolbarSubtitle = val;
+    this.subtitleChange.emit(this.toolbarSubtitle);
+  }
+
+  @Output() arrowChange = new EventEmitter();
+
+  @Input()
+  get arrow() {
+    return this.toolbarTitle;
+  }
+
+  set arrow(val) {
+    this.toolbarArrow = val;
+    this.arrowChange.emit(this.toolbarArrow);
+  }
+
+  @Output() linkChange = new EventEmitter();
+
+  @Input()
+  get link() {
+    return this.toolbarLink;
+  }
+
+  set link(val) {
+    this.toolbarLink = val;
+    this.linkChange.emit(this.toolbarLink);
   }
 
 }

@@ -1,19 +1,17 @@
-import { Component, OnInit } from '@angular/core';
-import {ToolbarService} from '../toolbar.service';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.css']
 })
-export class DashboardComponent implements OnInit {
 
-  constructor(private toolbarService: ToolbarService) { }
+export class DashboardComponent {
+  pageTitle = 'Project Reality : Statistics';
+  pageSubtitle = '';
+  pageArrow = false;
+  pageLink = '';
 
-  ngOnInit() {
-    this.toolbarService.setTitle('Project Reality: Statistics');
-    this.toolbarService.setSubtitle('');
-    this.toolbarService.hideArrow();
-  }
+  constructor() { }
 
 }

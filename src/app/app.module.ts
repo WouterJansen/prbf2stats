@@ -12,7 +12,6 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatButtonModule, MatCardModule, MatTabsModule, MatToolbarModule, MatGridListModule,
   MatFormFieldModule, MatTableModule, MatSortModule , MatInputModule} from '@angular/material';
 import { ToolbarComponent } from './toolbar/toolbar.component';
-import {ToolbarService} from './toolbar.service';
 
 @NgModule({
   declarations: [
@@ -27,7 +26,7 @@ import {ToolbarService} from './toolbar.service';
     MatButtonModule, MatToolbarModule, MatCardModule, MatTabsModule, HttpClientModule, MatInputModule, MatGridListModule,
     MatFormFieldModule, MatTableModule, MatSortModule, AppRoutingModule
   ],
-  providers: [MapService, ToolbarService],
+  providers: [MapService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

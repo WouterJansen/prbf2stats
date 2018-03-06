@@ -1,8 +1,8 @@
 <mat-toolbar class="toolbar">
-  <i class="material-icons" *ngIf="show" (click)="backClicked()">arrow_back</i>
+  <i class="material-icons" routerLink={{toolbarLink}} *ngIf="toolbarArrow">arrow_back</i>
   <div class="header-text">
-    <div class="title"  (click)="updateTitles()">{{title}}</div>
-    <div class="sub-title" (click)="updateTitles()">{{subtitle}}</div>
+    <div class="title">{{toolbarTitle}}</div>
+    <div class="sub-title">{{toolbarSubtitle}}</div>
   </div>
   <!-- Navigation -->
   <nav class="links">
