@@ -37,6 +37,8 @@
 }
 .toolbar .sub-title {
   font-size: small;
+  white-space: nowrap;
+  line-height: 1;
 }
 
 .toolbar nav.links {
