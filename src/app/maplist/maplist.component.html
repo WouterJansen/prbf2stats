@@ -13,7 +13,7 @@
       <div class="col stat">
         <div class="milestone-counter">
           <i class="fas fa-hashtag fa-3x"></i>
-          <h1 class="stat-count mat-h1">{{roundsplayed}}<br>Total rounds</h1>
+          <h1 class="stat-count mat-h1">{{roundsplayed}}<br>total rounds</h1>
         </div>
       </div>
     </mat-grid-tile>
@@ -21,7 +21,7 @@
       <div class="col stat">
         <div class="milestone-counter">
           <i class="fas fa-balance-scale fa-3x"></i>
-          <h1 class="stat-count mat-h1">{{team1balance | number}}% vs {{team2balance | number}}%<br>Team 1 vs Team 2 </h1>
+          <h1 class="stat-count mat-h1">{{team1balance | number}}% vs {{team2balance | number}}%<br>team 1 vs team 2 </h1>
         </div>
       </div>
     </mat-grid-tile>
@@ -29,7 +29,7 @@
       <div class="col stat">
         <div class="milestone-counter">
           <i class="fas fa-stopwatch fa-3x"></i>
-          <h1 class="stat-count mat-h1">{{averagetime | number}} min<br>Average Duration</h1>
+          <h1 class="stat-count mat-h1">{{averagetime.toFixed()}} min<br>average duration</h1>
         </div>
       </div>
     </mat-grid-tile></mat-grid-list></div>
@@ -45,37 +45,37 @@
   <ng-container matColumnDef="name">
     <mat-header-cell *matHeaderCellDef mat-sort-header> Name </mat-header-cell>
     <mat-cell *matCellDef="let row"> <a routerLink="/statistics/maps/{{row.name}}">
-      <span>{{row.name}}</span>
+      <span>{{row.displayName}}</span>
     </a> </mat-cell>
   </ng-container>
 
   <ng-container matColumnDef="timesPlayed">
-    <mat-header-cell *matHeaderCellDef mat-sort-header> # Played </mat-header-cell>
+    <mat-header-cell *matHeaderCellDef mat-sort-header> # played </mat-header-cell>
     <mat-cell *matCellDef="let row"> {{row.timesPlayed}} </mat-cell>
   </ng-container>
 
   <ng-container matColumnDef="averageDuration">
-    <mat-header-cell *matHeaderCellDef mat-sort-header> Average Duration </mat-header-cell>
+    <mat-header-cell *matHeaderCellDef mat-sort-header> Average duration </mat-header-cell>
     <mat-cell *matCellDef="let row"> {{row.averageDuration.toFixed()}} min </mat-cell>
   </ng-container>
 
   <ng-container matColumnDef="averageTicketsTeam1">
-    <mat-header-cell *matHeaderCellDef mat-sort-header> Average Tickets Team 1 </mat-header-cell>
+    <mat-header-cell *matHeaderCellDef mat-sort-header> Average tickets team 1 </mat-header-cell>
     <mat-cell *matCellDef="let row"> {{row.averageTicketsTeam1}} </mat-cell>
   </ng-container>
 
   <ng-container matColumnDef="averageTicketsTeam2">
-    <mat-header-cell *matHeaderCellDef mat-sort-header> Average Tickets Team 2 </mat-header-cell>
+    <mat-header-cell *matHeaderCellDef mat-sort-header> Average tickets team 2 </mat-header-cell>
     <mat-cell *matCellDef="let row"> {{row.averageTicketsTeam2}} </mat-cell>
   </ng-container>
 
   <ng-container matColumnDef="winsTeam1">
-    <mat-header-cell *matHeaderCellDef> Wins Team 1 </mat-header-cell>
+    <mat-header-cell *matHeaderCellDef># wins team 1 </mat-header-cell>
     <mat-cell *matCellDef="let row"> {{row.winsTeam1}} ({{row.winsTeam1 / row.timesPlayed * 100 | number}}%) </mat-cell>
   </ng-container>
 
   <ng-container matColumnDef="winsTeam2">
-    <mat-header-cell *matHeaderCellDef> Wins Team 2 </mat-header-cell>
+    <mat-header-cell *matHeaderCellDef># wins team 2 </mat-header-cell>
     <mat-cell *matCellDef="let row"> {{row.winsTeam2}} ({{row.winsTeam2 / row.timesPlayed * 100 | number}}%) </mat-cell>
   </ng-container>
 

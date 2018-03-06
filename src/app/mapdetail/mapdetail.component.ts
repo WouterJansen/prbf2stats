@@ -21,7 +21,13 @@ export class MapdetailComponent implements OnInit {
 
   ngOnInit() {
     this.mapName = this.route.snapshot.paramMap.get('mapName');
-    this.pageSubtitle = this.route.snapshot.paramMap.get('mapName');
+    this.mapService.getAllLevels().subscribe(maplist => {
+      for (const map of maplist.maps) {
+        if (this.mapName === map.name) {
+          this.pageSubtitle = map.displayName;
+        }
+      }
+    });
     this.getVersions();
   }
 
