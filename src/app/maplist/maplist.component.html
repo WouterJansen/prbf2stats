@@ -38,7 +38,7 @@
   <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Search map">
 </mat-form-field>
 
-<p >Last generated on {{maplist.date}}. Click on a map's name for detailed statistics.
+<p >Last generated on {{maplist.date}}. Click on a map's name for detailed statistics. <b> This overview filters out all COOP data! </b>
 </p>
 <mat-table [dataSource]="dataSource" matSort>
 
