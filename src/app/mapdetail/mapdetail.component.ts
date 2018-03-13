@@ -1,13 +1,15 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import {MapService} from '../map.service';
+
+declare const h337: any;
 
 @Component({
   selector: 'app-mapdetail',
   templateUrl: './mapdetail.component.html',
   styleUrls: ['./mapdetail.component.css']
 })
-export class MapdetailComponent implements OnInit {
+export class MapdetailComponent implements OnInit, AfterViewInit{
 
   levels = [];
   mapName: string;
@@ -17,6 +19,17 @@ export class MapdetailComponent implements OnInit {
   pageArrow = true;
   pageLink = '/statistics/maps';
   constructor(private route: ActivatedRoute, private mapService: MapService) {
+  }
+
+  ngAfterViewInit() {
+    const heatmap = h337.create({
+      container: window.document.querySelector('#heatmap')
+    });
+
+    heatmap.setData({
+      max: 5,
+      data: [{x: 128, y: 128, value: 5}]
+    });
   }
 
   ngOnInit() {
