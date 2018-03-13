@@ -74,7 +74,6 @@
   </mat-card>
   <h2 class="mat-display-1">Heatmaps</h2>
   <mat-card>
-  <div id="heatmap" style="width: 500px; height: 500px;"></div>
+    <div class="heatmap" id="heatmap" [ngStyle]="{'background-image': 'url(' + link + ')'}"></div>
   </mat-card>
-  <p>Coming soon!</p>
 </div>

@@ -12,7 +12,6 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatButtonModule, MatCardModule, MatTabsModule, MatToolbarModule, MatGridListModule,
   MatFormFieldModule, MatTableModule, MatSortModule , MatInputModule} from '@angular/material';
 import { ToolbarComponent } from './toolbar/toolbar.component';
-
 @NgModule({
   declarations: [
     AppComponent,

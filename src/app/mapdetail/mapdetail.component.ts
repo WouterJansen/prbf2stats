@@ -18,19 +18,20 @@ export class MapdetailComponent implements OnInit, AfterViewInit {
   pageSubtitle = 'mapname';
   pageArrow = true;
   pageLink = '/statistics/maps';
+  link;
+  heatmap;
   constructor(private route: ActivatedRoute, private mapService: MapService) {
+
   }
 
   ngAfterViewInit() {
-    const heatmap = h337.create({
-      container: window.document.querySelector('#heatmap')
-    });
-
-    heatmap.setData({
-      max: 5,
-      data: [{x: 128, y: 128, value: 5}]
+    this.link = './data/images/' + this.mapName + '.jpg';
+    this.heatmap = h337.create({
+      container: window.document.querySelector('#heatmap'),
+      radius: 1,
     });
   }
+
 
   ngOnInit() {
     this.mapName = this.route.snapshot.paramMap.get('mapName');
@@ -55,8 +56,28 @@ export class MapdetailComponent implements OnInit, AfterViewInit {
         this.mapService.getLevel(version + '/' + this.mapName)
           .subscribe(level => this.levels.push(level));
       }
+        // for (const version of this.versions) {
+        //   this.mapService.getHeatData(version + '/' + this.mapName + '/' + this.mapName + '.json')
+        //     .subscribe(heatData => this.heatData.push(heatData));
+        // }
     }
     );
+    this.mapService.getHeatData('v1.5.3.3/' + this.mapName + '/' + this.mapName + '.json')
+        .subscribe(heatData => {
+          let maxvalue = 0;
+          for (const entry of heatData) {
+            if (entry.value > maxvalue) {
+              maxvalue = entry.value;
+            }
+          }
+          if (maxvalue > 300) {
+            maxvalue = 300;
+          }
+          this.heatmap.setData({
+            max: maxvalue,
+            data: heatData
+          });
+        });
   }
 
 }

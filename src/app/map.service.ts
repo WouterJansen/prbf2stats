@@ -15,4 +15,8 @@ export class MapService {
   getLevel (mapname: string): Observable<any> {
     return this.http.get<any>('./data/' + mapname + '/statistics.json');
   }
+
+  getHeatData (mapname: string): Observable<any> {
+    return this.http.get<any>('./data/' + mapname);
+  }
 }
