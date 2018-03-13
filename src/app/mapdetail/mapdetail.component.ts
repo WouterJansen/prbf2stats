@@ -9,7 +9,7 @@ declare const h337: any;
   templateUrl: './mapdetail.component.html',
   styleUrls: ['./mapdetail.component.css']
 })
-export class MapdetailComponent implements OnInit, AfterViewInit{
+export class MapdetailComponent implements OnInit, AfterViewInit {
 
   levels = [];
   mapName: string;
