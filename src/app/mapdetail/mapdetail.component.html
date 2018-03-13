@@ -50,7 +50,7 @@
                       <td>{{layer.winsTeam1}} ({{layer.winsTeam1 / layer.timesPlayed * 100 | number}}%)</td>
                       <td>{{layer.winsTeam2}} ({{layer.winsTeam2 / layer.timesPlayed * 100 | number}}%)</td>
                     </tr>
-                    <ng-template ngFor let-route [ngForOf]="layer.routes" let-m="index">
+                    <ng-template *ngIf="gamemode.name == 'Advance & Secure'" ngFor let-route [ngForOf]="layer.routes" let-m="index">
                       <tr>
                         <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i class="material-icons">subdirectory_arrow_right</i>{{route.id}}
                         </td>

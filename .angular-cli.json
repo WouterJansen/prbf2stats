@@ -10,7 +10,7 @@
       "assets": [
         "assets",
         "favicon.ico",
-        "maps/"
+        "data/"
       ],
       "index": "index.html",
       "main": "main.ts",

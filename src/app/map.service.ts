@@ -9,10 +9,10 @@ export class MapService {
     private http: HttpClient) { }
 
   getAllLevels (): Observable<any> {
-    return this.http.get<any>('./maps/maplist.json');
+    return this.http.get<any>('./data/maplist.json');
   }
 
   getLevel (mapname: string): Observable<any> {
-    return this.http.get<any>('./maps/' + mapname + '/data.json');
+    return this.http.get<any>('./data/' + mapname + '/statistics.json');
   }
 }
