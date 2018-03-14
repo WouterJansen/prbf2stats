@@ -62,10 +62,6 @@ export class MapdetailComponent implements OnInit, AfterViewInit {
           this.mapService.getLevel(version + '/' + this.mapName)
             .subscribe(level => this.levels.push(level));
         }
-        // for (const version of this.versions) {
-        //   this.mapService.getHeatData(version + '/' + this.mapName + '/' + this.mapName + '.json')
-        //     .subscribe(heatData => this.heatData.push(heatData));
-        // }
       }
     );
   }
@@ -82,8 +78,9 @@ export class MapdetailComponent implements OnInit, AfterViewInit {
                   maxvalue = entry.value;
                 }
               }
-              if (maxvalue > 101) {
-                maxvalue = 100;
+              console.log(maxvalue);
+              if (maxvalue > 300) {
+                maxvalue = 300;
               }
               this.heatmap.setData({
                 data: heatData
@@ -101,8 +98,9 @@ export class MapdetailComponent implements OnInit, AfterViewInit {
                   maxvalue = entry.value;
                 }
               }
-              if (maxvalue > 101) {
-                maxvalue = 100;
+              console.log(maxvalue);
+              if (maxvalue > 300) {
+                maxvalue = 300;
               }
               this.heatmap.setData({
                 data: heatData
@@ -121,8 +119,9 @@ export class MapdetailComponent implements OnInit, AfterViewInit {
                 maxvalue = entry.value;
               }
             }
-            if (maxvalue > 101) {
-              maxvalue = 100;
+            console.log(maxvalue);
+            if (maxvalue > 300) {
+              maxvalue = 300;
             }
             this.heatmap.setDataMax(maxvalue);
             this.heatmap.setData({
@@ -142,8 +141,9 @@ export class MapdetailComponent implements OnInit, AfterViewInit {
               maxvalue = entry.value;
             }
           }
-          if (maxvalue > 101) {
-            maxvalue = 100;
+          console.log(maxvalue);
+          if (maxvalue > 300) {
+            maxvalue = 300;
           }
           this.heatmap.setData({
             data: heatData
