@@ -16,7 +16,7 @@ export class MapService {
     return this.http.get<any>('./data/' + mapname + '/statistics.json');
   }
 
-  getHeatData (mapname: string): Observable<any> {
-    return this.http.get<any>('./data/' + mapname);
+  getHeatData (link: string): Observable<any> {
+    return this.http.get<any>('./data/' + link);
   }
 }

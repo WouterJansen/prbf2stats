@@ -10,8 +10,9 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import {MapService} from './map.service';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatButtonModule, MatCardModule, MatTabsModule, MatToolbarModule, MatGridListModule,
-  MatFormFieldModule, MatTableModule, MatSortModule , MatInputModule} from '@angular/material';
+  MatFormFieldModule, MatTableModule, MatSortModule , MatInputModule, MatSelectModule, MatListModule} from '@angular/material';
 import { ToolbarComponent } from './toolbar/toolbar.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -22,7 +23,8 @@ import { ToolbarComponent } from './toolbar/toolbar.component';
   ],
   imports: [
     RouterModule, BrowserModule, BrowserAnimationsModule,
-    MatButtonModule, MatToolbarModule, MatCardModule, MatTabsModule, HttpClientModule, MatInputModule, MatGridListModule,
+    MatButtonModule, MatToolbarModule, MatCardModule, MatTabsModule, HttpClientModule, MatSelectModule, MatListModule,
+    MatInputModule, MatGridListModule,
     MatFormFieldModule, MatTableModule, MatSortModule, AppRoutingModule
   ],
   providers: [MapService],

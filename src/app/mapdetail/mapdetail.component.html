@@ -22,14 +22,14 @@
                 <tbody>
                 <tr>
                   <td>{{pageSubtitle}}(excluding COOP)</td>
-                  <td>{{levels[i].timesPlayed}}</td>
-                  <td>{{levels[i].averageDuration.toFixed() | number}} min</td>
-                  <td>{{levels[i].averageTicketsTeam1}}</td>
-                  <td>{{levels[i].averageTicketsTeam2}}</td>
-                  <td>{{levels[i].winsTeam1}} ({{levels[i].winsTeam1 / levels[i].timesPlayed * 100 | number}}%)</td>
-                  <td>{{levels[i].winsTeam2}} ({{levels[i].winsTeam2 / levels[i].timesPlayed * 100 | number}}%)</td>
+                  <td>{{levels[i]?.timesPlayed}}</td>
+                  <td>{{levels[i]?.averageDuration.toFixed() | number}} min</td>
+                  <td>{{levels[i]?.averageTicketsTeam1}}</td>
+                  <td>{{levels[i]?.averageTicketsTeam2}}</td>
+                  <td>{{levels[i]?.winsTeam1}} ({{levels[i]?.winsTeam1 / levels[i]?.timesPlayed * 100 | number}}%)</td>
+                  <td>{{levels[i]?.winsTeam2}} ({{levels[i]?.winsTeam2 / levels[i]?.timesPlayed * 100 | number}}%)</td>
                 </tr>
-                <ng-template ngFor let-gamemode [ngForOf]="levels[i].gameModes" let-i="index">
+                <ng-template ngFor let-gamemode [ngForOf]="levels[i]?.gameModes" let-i="index">
                   <tr>
                     <td>&nbsp;<i class="material-icons">subdirectory_arrow_right</i>{{gamemode.name}}</td>
                     <td>{{gamemode.timesPlayed}}</td>
@@ -50,7 +50,8 @@
                       <td>{{layer.winsTeam1}} ({{layer.winsTeam1 / layer.timesPlayed * 100 | number}}%)</td>
                       <td>{{layer.winsTeam2}} ({{layer.winsTeam2 / layer.timesPlayed * 100 | number}}%)</td>
                     </tr>
-                    <ng-template *ngIf="gamemode.name == 'Advance & Secure'" ngFor let-route [ngForOf]="layer.routes" let-m="index">
+                    <ng-template *ngIf="gamemode.name == 'Advance & Secure'" ngFor let-route [ngForOf]="layer.routes"
+                                 let-m="index">
                       <tr>
                         <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i class="material-icons">subdirectory_arrow_right</i>{{route.id}}
                         </td>
@@ -73,7 +74,37 @@
     </mat-card-content>
   </mat-card>
   <h2 class="mat-display-1">Heatmaps</h2>
-  <mat-card>
+    <mat-form-field>
+      <mat-select placeholder="Version" [(value)]="selectedversion">
+        <ng-template ngFor let-version [ngForOf]="versions" let-i="index">
+          <mat-option (click)="clickForm()" value={{i}}>{{version}}</mat-option>
+        </ng-template>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-select placeholder="GameMode" [(value)]="selectedgamemode">
+        <mat-option (click)="clickForm()" value="none">None</mat-option>
+        <ng-template ngFor let-gamemode [ngForOf]="levels[selectedversion]?.gameModes" let-j="index">
+          <mat-option (click)="clickForm()" value={{j}}>{{gamemode?.name}}</mat-option>
+        </ng-template>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-select placeholder="Layer" [(value)]="selectedlayer">
+        <mat-option (click)="clickForm()" value="none">None</mat-option>
+        <ng-template ngFor let-layer [ngForOf]="levels[selectedversion]?.gameModes[selectedgamemode]?.layers" let-k="index">
+          <mat-option (click)="clickForm()" value={{k}}>{{layer?.name}}</mat-option>
+        </ng-template>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-select placeholder="Route" [(value)]="selectedroute">
+        <mat-option (click)="clickForm()" value="none">None</mat-option>
+        <ng-template ngFor let-route [ngForOf]="levels[selectedversion]?.gameModes[selectedgamemode]?.layers[selectedlayer]?.routes" let-l="index">
+          <mat-option (click)="clickForm()" value={{l}}>{{route?.id}}</mat-option>
+        </ng-template>
+      </mat-select>
+    </mat-form-field>
+    <h3 class="subheading-2">Locations</h3>
     <div class="heatmap" id="heatmap" [ngStyle]="{'background-image': 'url(' + link + ')'}"></div>
-  </mat-card>
 </div>
