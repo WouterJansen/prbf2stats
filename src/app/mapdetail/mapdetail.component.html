@@ -83,7 +83,7 @@
     </mat-form-field>
     <mat-form-field>
       <mat-select placeholder="GameMode" [(value)]="selectedgamemode">
-        <mat-option (click)="clickForm()" value="none">None</mat-option>
+        <mat-option (click)="clickForm()" value="none">All</mat-option>
         <ng-template ngFor let-gamemode [ngForOf]="levels[selectedversion]?.gameModes" let-j="index">
           <mat-option (click)="clickForm()" value={{j}}>{{gamemode?.name}}</mat-option>
         </ng-template>
@@ -91,7 +91,7 @@
     </mat-form-field>
     <mat-form-field>
       <mat-select placeholder="Layer" [(value)]="selectedlayer">
-        <mat-option (click)="clickForm()" value="none">None</mat-option>
+        <mat-option (click)="clickForm()" value="none">All</mat-option>
         <ng-template ngFor let-layer [ngForOf]="levels[selectedversion]?.gameModes[selectedgamemode]?.layers" let-k="index">
           <mat-option (click)="clickForm()" value={{k}}>{{layer?.name}}</mat-option>
         </ng-template>
@@ -99,7 +99,7 @@
     </mat-form-field>
     <mat-form-field>
       <mat-select placeholder="Route" [(value)]="selectedroute">
-        <mat-option (click)="clickForm()" value="none">None</mat-option>
+        <mat-option (click)="clickForm()" value="none">All</mat-option>
         <ng-template ngFor let-route [ngForOf]="levels[selectedversion]?.gameModes[selectedgamemode]?.layers[selectedlayer]?.routes" let-l="index">
           <mat-option (click)="clickForm()" value={{l}}>{{route?.id}}</mat-option>
         </ng-template>
