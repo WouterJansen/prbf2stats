@@ -66,28 +66,29 @@ export class MapdetailComponent implements OnInit, AfterViewInit {
     );
   }
 
-  clickForm(): void {
+  clickHeatMapForm(): void {
     if (this.selectedroute === 'none') {
       if (this.selectedlayer === 'none') {
         if (this.selectedgamemode === 'none') {
-          this.mapService.getHeatData(this.versions[this.selectedversion] + '/' + this.mapName + '/' + this.mapName + '.json')
-            .subscribe(heatData => {
-              let maxvalue = 0;
-              for (const entry of heatData) {
-                if (entry.value > maxvalue) {
-                  maxvalue = entry.value;
-                }
+          for (const gameMode of this.levels[this.selectedversion].gameModes) {
+            for (const layer of gameMode.layers) {
+              for (const route of layer.routes) {
+                this.mapService.getHeatData(this.versions[this.selectedversion] + '/' + this.mapName + '/' + route.id + '.json')
+                  .subscribe(heatData => {
+                    this.heatmap.addData({
+                      data: heatData
+                    });
+                  });
               }
-              console.log(maxvalue);
-              if (maxvalue > 300) {
-                maxvalue = 300;
-              }
-              this.heatmap.setData({
-                data: heatData
-              });
-              this.heatmap.setDataMax(maxvalue);
-
-            });
+            }
+          }
+          let maxvalue = 0;
+          for (const entry of this.heatmap.getData()) {
+            if (entry.value > maxvalue) {
+              maxvalue = entry.value;
+            }
+          }
+          this.heatmap.setDataMax(maxvalue);
         } else {
           this.mapService.getHeatData(this.versions[this.selectedversion] + '/' + this.mapName + '/' +
             this.levels[this.selectedversion].gameModes[this.selectedgamemode].name + '.json')
@@ -97,10 +98,6 @@ export class MapdetailComponent implements OnInit, AfterViewInit {
                 if (entry.value > maxvalue) {
                   maxvalue = entry.value;
                 }
-              }
-              console.log(maxvalue);
-              if (maxvalue > 300) {
-                maxvalue = 300;
               }
               this.heatmap.setData({
                 data: heatData
@@ -119,10 +116,6 @@ export class MapdetailComponent implements OnInit, AfterViewInit {
                 maxvalue = entry.value;
               }
             }
-            console.log(maxvalue);
-            if (maxvalue > 300) {
-              maxvalue = 300;
-            }
             this.heatmap.setDataMax(maxvalue);
             this.heatmap.setData({
               data: heatData
@@ -140,10 +133,6 @@ export class MapdetailComponent implements OnInit, AfterViewInit {
             if (entry.value > maxvalue) {
               maxvalue = entry.value;
             }
-          }
-          console.log(maxvalue);
-          if (maxvalue > 300) {
-            maxvalue = 300;
           }
           this.heatmap.setData({
             data: heatData
