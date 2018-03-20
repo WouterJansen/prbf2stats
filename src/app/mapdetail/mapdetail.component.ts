@@ -26,11 +26,9 @@ export class MapdetailComponent implements OnInit, AfterViewInit {
   selectedroute = 'none';
 
   constructor(private route: ActivatedRoute, private mapService: MapService) {
-
   }
 
   ngAfterViewInit() {
-
     this.heatmap = h337.create({
       container: window.document.querySelector('#heatmap'),
       radius: 2,
@@ -85,7 +83,6 @@ export class MapdetailComponent implements OnInit, AfterViewInit {
                     this.heatmap.addData(heatData);
                     this.heatmap.setDataMin(0.03);
                     this.heatmap.setDataMax(0.25);
-                    console.log(this.heatmap.getData());
                   });
               }
             }
@@ -103,6 +100,7 @@ export class MapdetailComponent implements OnInit, AfterViewInit {
                 this.levels[this.selectedversion].gameModes[this.selectedgamemode].name + '_' + layer.name + '_' + route.id + '.json')
                 .subscribe(heatData => {
                   this.heatmap.addData(heatData);
+                  this.heatmap.setDataMin(0.03);
                   this.heatmap.setDataMax(0.25);
                 });
             }
@@ -121,6 +119,7 @@ export class MapdetailComponent implements OnInit, AfterViewInit {
             this.levels[this.selectedversion].gameModes[this.selectedgamemode].layers[this.selectedlayer].name + '_' + route.id + '.json')
             .subscribe(heatData => {
               this.heatmap.addData(heatData);
+              this.heatmap.setDataMin(0.03);
               this.heatmap.setDataMax(0.25);
             });
         }
@@ -139,6 +138,7 @@ export class MapdetailComponent implements OnInit, AfterViewInit {
         + '.json')
         .subscribe(heatData => {
           this.heatmap.addData(heatData);
+          this.heatmap.setDataMin(0.03);
           this.heatmap.setDataMax(0.25);
         });
     }
