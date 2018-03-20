@@ -35,19 +35,6 @@ export class MapdetailComponent implements OnInit, AfterViewInit {
       container: window.document.querySelector('#heatmap'),
       radius: 2,
     });
-    const dataPoint = {
-      x: 5,
-      y: 5,
-      value: 100
-    };
-    const data = {
-      max: 500,
-      min: 0,
-      data: [
-        dataPoint, dataPoint, dataPoint, dataPoint
-      ]
-    };
-    this.heatmap.setData(data);
   }
 
 
@@ -84,7 +71,7 @@ export class MapdetailComponent implements OnInit, AfterViewInit {
       if (this.selectedlayer === 'none') {
         if (this.selectedgamemode === 'none') {
           const data = {
-            max: 500,
+            max: 0.25,
             min: 0,
             data: [ ]
           };
@@ -96,14 +83,16 @@ export class MapdetailComponent implements OnInit, AfterViewInit {
                   gameMode.name + '_' + layer.name + '_' + route.id + '.json')
                   .subscribe(heatData => {
                     this.heatmap.addData(heatData);
-                    this.heatmap.setDataMax(500);
+                    this.heatmap.setDataMin(0.03);
+                    this.heatmap.setDataMax(0.25);
+                    console.log(this.heatmap.getData());
                   });
               }
             }
           }
         } else {
           const data = {
-            max: 0,
+            max: 0.25,
             min: 0,
             data: [ ]
           };
@@ -114,14 +103,14 @@ export class MapdetailComponent implements OnInit, AfterViewInit {
                 this.levels[this.selectedversion].gameModes[this.selectedgamemode].name + '_' + layer.name + '_' + route.id + '.json')
                 .subscribe(heatData => {
                   this.heatmap.addData(heatData);
-                  this.heatmap.setDataMax(500);
+                  this.heatmap.setDataMax(0.25);
                 });
             }
           }
         }
       } else {
         const data = {
-          max: 0,
+          max: 0.25,
           min: 0,
           data: [ ]
         };
@@ -132,13 +121,13 @@ export class MapdetailComponent implements OnInit, AfterViewInit {
             this.levels[this.selectedversion].gameModes[this.selectedgamemode].layers[this.selectedlayer].name + '_' + route.id + '.json')
             .subscribe(heatData => {
               this.heatmap.addData(heatData);
-              this.heatmap.setDataMax(500);
+              this.heatmap.setDataMax(0.25);
             });
         }
       }
     } else {
       const data = {
-        max: 0,
+        max: 0.25,
         min: 0,
         data: [ ]
       };
@@ -150,7 +139,7 @@ export class MapdetailComponent implements OnInit, AfterViewInit {
         + '.json')
         .subscribe(heatData => {
           this.heatmap.addData(heatData);
-          this.heatmap.setDataMax(500);
+          this.heatmap.setDataMax(0.25);
         });
     }
   }
