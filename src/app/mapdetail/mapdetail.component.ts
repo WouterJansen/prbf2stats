@@ -1,5 +1,5 @@
-import { Component, OnInit, AfterViewInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import {Component, OnInit, AfterViewInit} from '@angular/core';
+import {ActivatedRoute} from '@angular/router';
 import {MapService} from '../map.service';
 
 declare const h337: any;
@@ -20,7 +20,7 @@ export class MapdetailComponent implements OnInit, AfterViewInit {
   pageLink = '/statistics/maps';
   link;
   heatmap;
-  selectedversion;
+  selectedversion = 'none';
   selectedgamemode = 'none';
   selectedlayer = 'none';
   selectedroute = 'none';
@@ -35,6 +35,19 @@ export class MapdetailComponent implements OnInit, AfterViewInit {
       container: window.document.querySelector('#heatmap'),
       radius: 2,
     });
+    const dataPoint = {
+      x: 5,
+      y: 5,
+      value: 100
+    };
+    const data = {
+      max: 500,
+      min: 0,
+      data: [
+        dataPoint, dataPoint, dataPoint, dataPoint
+      ]
+    };
+    this.heatmap.setData(data);
   }
 
 
@@ -70,74 +83,74 @@ export class MapdetailComponent implements OnInit, AfterViewInit {
     if (this.selectedroute === 'none') {
       if (this.selectedlayer === 'none') {
         if (this.selectedgamemode === 'none') {
+          const data = {
+            max: 500,
+            min: 0,
+            data: [ ]
+          };
+          this.heatmap.setData(data);
           for (const gameMode of this.levels[this.selectedversion].gameModes) {
             for (const layer of gameMode.layers) {
               for (const route of layer.routes) {
-                this.mapService.getHeatData(this.versions[this.selectedversion] + '/' + this.mapName + '/' + route.id + '.json')
+                this.mapService.getHeatData(this.versions[this.selectedversion] + '/' + this.mapName + '/' +
+                  gameMode.name + '_' + layer.name + '_' + route.id + '.json')
                   .subscribe(heatData => {
-                    this.heatmap.addData({
-                      data: heatData
-                    });
+                    this.heatmap.addData(heatData);
+                    this.heatmap.setDataMax(500);
                   });
               }
             }
           }
-          let maxvalue = 0;
-          for (const entry of this.heatmap.getData()) {
-            if (entry.value > maxvalue) {
-              maxvalue = entry.value;
+        } else {
+          const data = {
+            max: 0,
+            min: 0,
+            data: [ ]
+          };
+          this.heatmap.setData(data);
+          for (const layer of this.levels[this.selectedversion].gameModes[this.selectedgamemode].layers) {
+            for (const route of layer.routes) {
+              this.mapService.getHeatData(this.versions[this.selectedversion] + '/' + this.mapName + '/' +
+                this.levels[this.selectedversion].gameModes[this.selectedgamemode].name + '_' + layer.name + '_' + route.id + '.json')
+                .subscribe(heatData => {
+                  this.heatmap.addData(heatData);
+                  this.heatmap.setDataMax(500);
+                });
             }
           }
-          this.heatmap.setDataMax(maxvalue);
-        } else {
-          this.mapService.getHeatData(this.versions[this.selectedversion] + '/' + this.mapName + '/' +
-            this.levels[this.selectedversion].gameModes[this.selectedgamemode].name + '.json')
-            .subscribe(heatData => {
-              let maxvalue = 0;
-              for (const entry of heatData) {
-                if (entry.value > maxvalue) {
-                  maxvalue = entry.value;
-                }
-              }
-              this.heatmap.setData({
-                data: heatData
-              });
-              this.heatmap.setDataMax(maxvalue);
-
-            });
         }
       } else {
-        this.mapService.getHeatData(this.versions[this.selectedversion] + '/' + this.mapName + '/' +
-          this.levels[this.selectedversion].gameModes[this.selectedgamemode].layers[this.selectedlayer].name + '.json')
-          .subscribe(heatData => {
-            let maxvalue = 0;
-            for (const entry of heatData) {
-              if (entry.value > maxvalue) {
-                maxvalue = entry.value;
-              }
-            }
-            this.heatmap.setDataMax(maxvalue);
-            this.heatmap.setData({
-              data: heatData
+        const data = {
+          max: 0,
+          min: 0,
+          data: [ ]
+        };
+        this.heatmap.setData(data);
+        for (const route of this.levels[this.selectedversion].gameModes[this.selectedgamemode].layers[this.selectedlayer].routes) {
+          this.mapService.getHeatData(this.versions[this.selectedversion] + '/' + this.mapName + '/' +
+            this.levels[this.selectedversion].gameModes[this.selectedgamemode].name + '_' +
+            this.levels[this.selectedversion].gameModes[this.selectedgamemode].layers[this.selectedlayer].name + '_' + route.id + '.json')
+            .subscribe(heatData => {
+              this.heatmap.addData(heatData);
+              this.heatmap.setDataMax(500);
             });
-            this.heatmap.setDataMax(maxvalue);
-          });
+        }
       }
     } else {
+      const data = {
+        max: 0,
+        min: 0,
+        data: [ ]
+      };
+      this.heatmap.setData(data);
       this.mapService.getHeatData(this.versions[this.selectedversion] + '/' + this.mapName + '/' +
-        this.levels[this.selectedversion].gameModes[this.selectedgamemode].layers[this.selectedlayer].routes[this.selectedroute].id +
-        '.json')
+        this.levels[this.selectedversion].gameModes[this.selectedgamemode].name + '_' +
+        this.levels[this.selectedversion].gameModes[this.selectedgamemode].layers[this.selectedlayer].name +
+        '_' + this.levels[this.selectedversion].gameModes[this.selectedgamemode].layers[this.selectedlayer].routes[this.selectedroute].id
+        + '.json')
         .subscribe(heatData => {
-          let maxvalue = 0;
-          for (const entry of heatData) {
-            if (entry.value > maxvalue) {
-              maxvalue = entry.value;
-            }
-          }
-          this.heatmap.setData({
-            data: heatData
-          });
-          this.heatmap.setDataMax(maxvalue);
+          this.heatmap.addData(heatData);
+          this.heatmap.setDataMax(500);
         });
     }
   }
