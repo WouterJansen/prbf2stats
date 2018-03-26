@@ -33,6 +33,12 @@ export class MapdetailComponent implements OnInit, AfterViewInit {
       container: window.document.querySelector('#heatmap'),
       radius: 2,
     });
+    const data = {
+      max: 0.25,
+      min: 0,
+      data: [ ]
+    };
+    this.heatmap.setData(data);
   }
 
 
