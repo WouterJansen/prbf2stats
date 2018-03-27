@@ -76,7 +76,7 @@ export class MapdetailComponent implements OnInit, AfterViewInit {
     if (this.selectedroute === 'none') {
       if (this.selectedlayer === 'none') {
         if (this.selectedgamemode === 'none') {
-          this.mapService.getHeatData(this.versions[this.selectedversion] + '/' + this.mapName + '/' + this.mapName + '.json')
+          this.mapService.getHeatData(this.versions[this.selectedversion] + '/' + this.mapName + '/' + 'combinedmovement.json')
             .subscribe(heatData => {
               this.heatmap.setData({
                 data: heatData
@@ -85,7 +85,7 @@ export class MapdetailComponent implements OnInit, AfterViewInit {
               this.heatmap.setDataMax(0.25);
             });
         } else {
-          this.mapService.getHeatData(this.versions[this.selectedversion] + '/' + this.mapName + '/' +
+          this.mapService.getHeatData('combinedmovement_' + this.versions[this.selectedversion] + '/' + this.mapName + '/' +
             this.levels[this.selectedversion].gameModes[this.selectedgamemode].name + '.json')
             .subscribe(heatData => {
               this.heatmap.setData({
@@ -97,7 +97,7 @@ export class MapdetailComponent implements OnInit, AfterViewInit {
             });
         }
       } else {
-        this.mapService.getHeatData(this.versions[this.selectedversion] + '/' + this.mapName + '/' +
+        this.mapService.getHeatData('combinedmovement_' + this.versions[this.selectedversion] + '/' + this.mapName + '/' +
           this.levels[this.selectedversion].gameModes[this.selectedgamemode].name + '_' +
           this.levels[this.selectedversion].gameModes[this.selectedgamemode].layers[this.selectedlayer].name + '.json')
           .subscribe(heatData => {
@@ -109,7 +109,7 @@ export class MapdetailComponent implements OnInit, AfterViewInit {
           });
       }
     } else {
-      this.mapService.getHeatData(this.versions[this.selectedversion] + '/' + this.mapName + '/' +
+      this.mapService.getHeatData('combinedmovement_' + this.versions[this.selectedversion] + '/' + this.mapName + '/' +
         this.levels[this.selectedversion].gameModes[this.selectedgamemode].name + '_' +
         this.levels[this.selectedversion].gameModes[this.selectedgamemode].layers[this.selectedlayer].name + '_' +
         this.levels[this.selectedversion].gameModes[this.selectedgamemode].layers[this.selectedlayer].routes[this.selectedroute].id +
