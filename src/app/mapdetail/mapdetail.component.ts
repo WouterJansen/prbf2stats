@@ -11,19 +11,19 @@ declare const h337: any;
 })
 export class MapdetailComponent implements OnInit, AfterViewInit {
 
-  levels = [];
+  mapStatistics = [];
   mapName: string;
-  versions = [];
+  versionList = [];
   pageTitle = 'Map Details';
   pageSubtitle = 'mapname';
   pageArrow = true;
   pageLink = '/statistics/maps';
-  link;
-  heatmap;
-  selectedversion = 'none';
-  selectedgamemode = 'none';
-  selectedlayer = 'none';
-  selectedroute = 'none';
+  mapImageUrl;
+  combinedMovementMap;
+  selectedVersion = 'none';
+  selectedGameMode = 'none';
+  selectedLayer = 'none';
+  selectedRoute = 'none';
 
   constructor(private route: ActivatedRoute, private mapService: MapService) {
 
@@ -31,7 +31,7 @@ export class MapdetailComponent implements OnInit, AfterViewInit {
 
   ngAfterViewInit() {
 
-    this.heatmap = h337.create({
+    this.combinedMovementMap = h337.create({
       container: window.document.querySelector('#heatmap'),
       radius: 2,
     });
@@ -40,13 +40,13 @@ export class MapdetailComponent implements OnInit, AfterViewInit {
       min: 0,
       data: [ ]
     };
-    this.heatmap.setData(data);
+    this.combinedMovementMap.setData(data);
   }
 
 
   ngOnInit() {
     this.mapName = this.route.snapshot.paramMap.get('mapName');
-    this.link = './data/images/' + this.mapName + '.jpg';
+    this.mapImageUrl = './data/images/' + this.mapName + '.jpg';
     this.mapService.getAllLevels().subscribe(maplist => {
       for (const map of maplist.maps) {
         if (this.mapName === map.name) {
@@ -61,65 +61,65 @@ export class MapdetailComponent implements OnInit, AfterViewInit {
     this.mapService.getAllLevels().subscribe(maplist => {
         for (const map of maplist.maps) {
           if (map.name === this.mapName) {
-            this.versions = map.versions;
+            this.versionList = map.versionList;
           }
         }
-        for (const version of this.versions) {
+        for (const version of this.versionList) {
           this.mapService.getLevel(version + '/' + this.mapName)
-            .subscribe(level => this.levels.push(level));
+            .subscribe(data => this.mapStatistics.push(data));
         }
       }
     );
   }
 
   clickHeatMapForm(): void {
-    if (this.selectedroute === 'none') {
-      if (this.selectedlayer === 'none') {
-        if (this.selectedgamemode === 'none') {
-          this.mapService.getHeatData(this.versions[this.selectedversion] + '/' + this.mapName + '/combinedmovement.json')
+    if (this.selectedRoute === 'none') {
+      if (this.selectedLayer === 'none') {
+        if (this.selectedGameMode === 'none') {
+          this.mapService.getHeatData(this.versionList[this.selectedVersion] + '/' + this.mapName + '/combinedmovement.json')
             .subscribe(heatData => {
-              this.heatmap.setData({
+              this.combinedMovementMap.setData({
                 data: heatData
               });
-              this.heatmap.setDataMin(0.03);
-              this.heatmap.setDataMax(0.25);
+              this.combinedMovementMap.setDataMin(0.03);
+              this.combinedMovementMap.setDataMax(0.25);
             });
         } else {
-          this.mapService.getHeatData(this.versions[this.selectedversion] + '/' + this.mapName + '/combinedmovement_' +
-            this.levels[this.selectedversion].gameModes[this.selectedgamemode].name + '.json')
+          this.mapService.getHeatData(this.versionList[this.selectedVersion] + '/' + this.mapName + '/combinedmovement_' +
+            this.mapStatistics[this.selectedVersion].gameModes[this.selectedGameMode].name + '.json')
             .subscribe(heatData => {
-              this.heatmap.setData({
+              this.combinedMovementMap.setData({
                 data: heatData
               });
-              this.heatmap.setDataMin(0.03);
-              this.heatmap.setDataMax(0.25);
+              this.combinedMovementMap.setDataMin(0.03);
+              this.combinedMovementMap.setDataMax(0.25);
 
             });
         }
       } else {
-        this.mapService.getHeatData(this.versions[this.selectedversion] + '/' + this.mapName + '/combinedmovement_' +
-          this.levels[this.selectedversion].gameModes[this.selectedgamemode].name + '_' +
-          this.levels[this.selectedversion].gameModes[this.selectedgamemode].layers[this.selectedlayer].name + '.json')
+        this.mapService.getHeatData(this.versionList[this.selectedVersion] + '/' + this.mapName + '/combinedmovement_' +
+          this.mapStatistics[this.selectedVersion].gameModes[this.selectedGameMode].name + '_' +
+          this.mapStatistics[this.selectedVersion].gameModes[this.selectedGameMode].layers[this.selectedLayer].name + '.json')
           .subscribe(heatData => {
-            this.heatmap.setData({
+            this.combinedMovementMap.setData({
               data: heatData
             });
-            this.heatmap.setDataMin(0.03);
-            this.heatmap.setDataMax(0.25);
+            this.combinedMovementMap.setDataMin(0.03);
+            this.combinedMovementMap.setDataMax(0.25);
           });
       }
     } else {
-      this.mapService.getHeatData(this.versions[this.selectedversion] + '/' + this.mapName + '/combinedmovement_' +
-        this.levels[this.selectedversion].gameModes[this.selectedgamemode].name + '_' +
-        this.levels[this.selectedversion].gameModes[this.selectedgamemode].layers[this.selectedlayer].name + '_' +
-        this.levels[this.selectedversion].gameModes[this.selectedgamemode].layers[this.selectedlayer].routes[this.selectedroute].id +
+      this.mapService.getHeatData(this.versionList[this.selectedVersion] + '/' + this.mapName + '/combinedmovement_' +
+        this.mapStatistics[this.selectedVersion].gameModes[this.selectedGameMode].name + '_' +
+        this.mapStatistics[this.selectedVersion].gameModes[this.selectedGameMode].layers[this.selectedLayer].name + '_' +
+        this.mapStatistics[this.selectedVersion].gameModes[this.selectedGameMode].layers[this.selectedLayer].routes[this.selectedRoute].id +
         '.json')
         .subscribe(heatData => {
-          this.heatmap.setData({
+          this.combinedMovementMap.setData({
             data: heatData
           });
-          this.heatmap.setDataMin(0.03);
-          this.heatmap.setDataMax(0.25);
+          this.combinedMovementMap.setDataMin(0.03);
+          this.combinedMovementMap.setDataMax(0.25);
         });
     }
   }

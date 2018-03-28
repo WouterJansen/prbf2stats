@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
-import { MaplistComponent } from './maplist/maplist.component';
+import { MapListComponent } from './maplist/maplist.component';
 import { AppRoutingModule } from './app-routing.module';
 import {RouterModule} from '@angular/router';
 import { MapdetailComponent } from './mapdetail/mapdetail.component';
@@ -16,7 +16,7 @@ import { ToolbarComponent } from './toolbar/toolbar.component';
 @NgModule({
   declarations: [
     AppComponent,
-    MaplistComponent,
+    MapListComponent,
     MapdetailComponent,
     DashboardComponent,
     ToolbarComponent,

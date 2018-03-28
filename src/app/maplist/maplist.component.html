@@ -5,7 +5,7 @@
       <div class="col stat">
         <div class="milestone-counter">
           <i class="fas fa-map fa-3x"></i>
-          <h1 class="stat-count mat-h1">{{maplist?.maps.length}}<br> maps</h1>
+          <h1 class="stat-count mat-h1">{{mapList?.maps.length}}<br> maps</h1>
         </div>
       </div>
     </mat-grid-tile>
@@ -13,7 +13,7 @@
       <div class="col stat">
         <div class="milestone-counter">
           <i class="fas fa-hashtag fa-3x"></i>
-          <h1 class="stat-count mat-h1">{{roundsplayed}}<br>total rounds</h1>
+          <h1 class="stat-count mat-h1">{{roundsPlayed}}<br>total rounds</h1>
         </div>
       </div>
     </mat-grid-tile>
@@ -21,7 +21,7 @@
       <div class="col stat">
         <div class="milestone-counter">
           <i class="fas fa-balance-scale fa-3x"></i>
-          <h1 class="stat-count mat-h1">{{team1balance | number}}% vs {{team2balance | number}}%<br>team 1 vs team 2 </h1>
+          <h1 class="stat-count mat-h1">{{team1Balance | number}}% vs {{team2Balance | number}}%<br>team 1 vs team 2 </h1>
         </div>
       </div>
     </mat-grid-tile>
@@ -29,7 +29,7 @@
       <div class="col stat">
         <div class="milestone-counter">
           <i class="fas fa-stopwatch fa-3x"></i>
-          <h1 class="stat-count mat-h1">{{averagetime.toFixed()}} min<br>average duration</h1>
+          <h1 class="stat-count mat-h1">{{averageDuration.toFixed()}} min<br>average duration</h1>
         </div>
       </div>
     </mat-grid-tile></mat-grid-list></div>
@@ -38,7 +38,7 @@
   <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Search map">
 </mat-form-field>
 
-<p >Last generated on {{maplist?.date}}. Click on a map's name for detailed statistics. <b> This overview filters out all COOP data! </b>
+<p >Last generated on {{mapList?.date}}. Click on a map's name for detailed statistics. <b> This overview filters out all COOP data! </b>
 </p>
 <mat-table [dataSource]="dataSource" matSort>
 
