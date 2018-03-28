@@ -5,7 +5,7 @@ import { AppComponent } from './app.component';
 import { MapListComponent } from './maplist/maplist.component';
 import { AppRoutingModule } from './app-routing.module';
 import {RouterModule} from '@angular/router';
-import { MapdetailComponent } from './mapdetail/mapdetail.component';
+import { MapDetailComponent } from './mapdetail/mapdetail.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import {MapService} from './map.service';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
@@ -17,7 +17,7 @@ import { ToolbarComponent } from './toolbar/toolbar.component';
   declarations: [
     AppComponent,
     MapListComponent,
-    MapdetailComponent,
+    MapDetailComponent,
     DashboardComponent,
     ToolbarComponent,
   ],

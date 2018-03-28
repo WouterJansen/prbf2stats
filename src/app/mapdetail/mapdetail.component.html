@@ -22,16 +22,16 @@
                 <tbody>
                 <tr>
                   <td>{{pageSubtitle}}(excluding COOP)</td>
-                  <td>{{mapStatistics[i]?.timesPlayed}}</td>
-                  <td>{{mapStatistics[i]?.averageDuration.toFixed() | number}} min</td>
-                  <td>{{mapStatistics[i]?.averageTicketsTeam1}}</td>
-                  <td>{{mapStatistics[i]?.averageTicketsTeam2}}</td>
-                  <td>{{mapStatistics[i]?.winsTeam1}} ({{mapStatistics[i]?.winsTeam1 / mapStatistics[i]?.timesPlayed *
-                    100 | number}}%)</td>
-                  <td>{{mapStatistics[i]?.winsTeam2}} ({{mapStatistics[i]?.winsTeam2 / mapStatistics[i]?.timesPlayed *
-                    100 | number}}%)</td>
+                  <td>{{statistics[i]?.timesPlayed}}</td>
+                  <td>{{statistics[i]?.averageDuration.toFixed() | number}} min</td>
+                  <td>{{statistics[i]?.averageTicketsTeam1}}</td>
+                  <td>{{statistics[i]?.averageTicketsTeam2}}</td>
+                  <td>{{statistics[i]?.winsTeam1}} ({{statistics[i]?.winsTeam1 / statistics[i]?.timesPlayed * 100 |
+                    number}}%)</td>
+                  <td>{{statistics[i]?.winsTeam2}} ({{statistics[i]?.winsTeam2 / statistics[i]?.timesPlayed * 100 |
+                    number}}%)</td>
                 </tr>
-                <ng-template ngFor let-gamemode [ngForOf]="mapStatistics[i]?.gameModes" let-i="index">
+                <ng-template ngFor let-gamemode [ngForOf]="statistics[i]?.gameModes" let-i="index">
                   <tr>
                     <td>&nbsp;<i class="material-icons">subdirectory_arrow_right</i>{{gamemode.name}}</td>
                     <td>{{gamemode.timesPlayed}}</td>
@@ -86,7 +86,7 @@
     <mat-form-field>
       <mat-select placeholder="GameMode" [(value)]="selectedGameMode">
         <mat-option (click)="clickHeatMapForm()" value="none">All</mat-option>
-        <ng-template ngFor let-gamemode [ngForOf]="mapStatistics[selectedVersion]?.gameModes" let-j="index">
+        <ng-template ngFor let-gamemode [ngForOf]="statistics[selectedVersion]?.gameModes" let-j="index">
           <mat-option (click)="clickHeatMapForm()" value={{j}}>{{gamemode?.name}}</mat-option>
         </ng-template>
       </mat-select>
@@ -94,7 +94,7 @@
     <mat-form-field>
       <mat-select placeholder="Layer" [(value)]="selectedLayer">
         <mat-option (click)="clickHeatMapForm()" value="none">All</mat-option>
-        <ng-template ngFor let-layer [ngForOf]="mapStatistics[selectedVersion]?.gameModes[selectedGameMode]?.layers" let-k="index">
+        <ng-template ngFor let-layer [ngForOf]="statistics[selectedVersion]?.gameModes[selectedGameMode]?.layers" let-k="index">
           <mat-option (click)="clickHeatMapForm()" value={{k}}>{{layer?.name}}</mat-option>
         </ng-template>
       </mat-select>
@@ -102,11 +102,11 @@
     <mat-form-field>
       <mat-select placeholder="Route" [(value)]="selectedRoute">
         <mat-option (click)="clickHeatMapForm()" value="none">All</mat-option>
-        <ng-template ngFor let-route [ngForOf]="mapStatistics[selectedVersion]?.gameModes[selectedGameMode]?.layers[selectedLayer]?.routes" let-l="index">
+        <ng-template ngFor let-route [ngForOf]="statistics[selectedVersion]?.gameModes[selectedGameMode]?.layers[selectedLayer]?.routes" let-l="index">
           <mat-option (click)="clickHeatMapForm()" value={{l}}>{{route?.id}}</mat-option>
         </ng-template>
       </mat-select>
     </mat-form-field>
     <h3 class="subheading-2">Locations</h3>
-    <div class="heatmap" id="heatmap" [ngStyle]="{'background-image': 'url(' + mapImageUrl + ')'}"></div>
+    <div class="combinedMovementMap" id="combinedMovementMap" [ngStyle]="{'background-image': 'url(' + mapImageURL + ')'}"></div>
 </div>

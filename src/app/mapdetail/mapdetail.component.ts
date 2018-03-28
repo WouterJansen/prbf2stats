@@ -9,16 +9,16 @@ declare const h337: any;
   templateUrl: './mapdetail.component.html',
   styleUrls: ['./mapdetail.component.css']
 })
-export class MapdetailComponent implements OnInit, AfterViewInit {
+export class MapDetailComponent implements OnInit, AfterViewInit {
 
-  mapStatistics = [];
+  statistics = [];
   mapName: string;
   versionList = [];
   pageTitle = 'Map Details';
   pageSubtitle = 'mapname';
   pageArrow = true;
   pageLink = '/statistics/maps';
-  mapImageUrl;
+  mapImageURL;
   combinedMovementMap;
   selectedVersion = 'none';
   selectedGameMode = 'none';
@@ -32,7 +32,7 @@ export class MapdetailComponent implements OnInit, AfterViewInit {
   ngAfterViewInit() {
 
     this.combinedMovementMap = h337.create({
-      container: window.document.querySelector('#heatmap'),
+      container: window.document.querySelector('#combinedMovementMap'),
       radius: 2,
     });
     const data = {
@@ -46,7 +46,7 @@ export class MapdetailComponent implements OnInit, AfterViewInit {
 
   ngOnInit() {
     this.mapName = this.route.snapshot.paramMap.get('mapName');
-    this.mapImageUrl = './data/images/' + this.mapName + '.jpg';
+    this.mapImageURL = './data/images/' + this.mapName + '.jpg';
     this.mapService.getAllLevels().subscribe(maplist => {
       for (const map of maplist.maps) {
         if (this.mapName === map.name) {
@@ -61,12 +61,12 @@ export class MapdetailComponent implements OnInit, AfterViewInit {
     this.mapService.getAllLevels().subscribe(maplist => {
         for (const map of maplist.maps) {
           if (map.name === this.mapName) {
-            this.versionList = map.versionList;
+            this.versionList = map.versions;
           }
         }
         for (const version of this.versionList) {
           this.mapService.getLevel(version + '/' + this.mapName)
-            .subscribe(data => this.mapStatistics.push(data));
+            .subscribe(level => this.statistics.push(level));
         }
       }
     );
@@ -86,7 +86,7 @@ export class MapdetailComponent implements OnInit, AfterViewInit {
             });
         } else {
           this.mapService.getHeatData(this.versionList[this.selectedVersion] + '/' + this.mapName + '/combinedmovement_' +
-            this.mapStatistics[this.selectedVersion].gameModes[this.selectedGameMode].name + '.json')
+            this.statistics[this.selectedVersion].gameModes[this.selectedGameMode].name + '.json')
             .subscribe(heatData => {
               this.combinedMovementMap.setData({
                 data: heatData
@@ -98,8 +98,8 @@ export class MapdetailComponent implements OnInit, AfterViewInit {
         }
       } else {
         this.mapService.getHeatData(this.versionList[this.selectedVersion] + '/' + this.mapName + '/combinedmovement_' +
-          this.mapStatistics[this.selectedVersion].gameModes[this.selectedGameMode].name + '_' +
-          this.mapStatistics[this.selectedVersion].gameModes[this.selectedGameMode].layers[this.selectedLayer].name + '.json')
+          this.statistics[this.selectedVersion].gameModes[this.selectedGameMode].name + '_' +
+          this.statistics[this.selectedVersion].gameModes[this.selectedGameMode].layers[this.selectedLayer].name + '.json')
           .subscribe(heatData => {
             this.combinedMovementMap.setData({
               data: heatData
@@ -110,9 +110,9 @@ export class MapdetailComponent implements OnInit, AfterViewInit {
       }
     } else {
       this.mapService.getHeatData(this.versionList[this.selectedVersion] + '/' + this.mapName + '/combinedmovement_' +
-        this.mapStatistics[this.selectedVersion].gameModes[this.selectedGameMode].name + '_' +
-        this.mapStatistics[this.selectedVersion].gameModes[this.selectedGameMode].layers[this.selectedLayer].name + '_' +
-        this.mapStatistics[this.selectedVersion].gameModes[this.selectedGameMode].layers[this.selectedLayer].routes[this.selectedRoute].id +
+        this.statistics[this.selectedVersion].gameModes[this.selectedGameMode].name + '_' +
+        this.statistics[this.selectedVersion].gameModes[this.selectedGameMode].layers[this.selectedLayer].name + '_' +
+        this.statistics[this.selectedVersion].gameModes[this.selectedGameMode].layers[this.selectedLayer].routes[this.selectedRoute].id +
         '.json')
         .subscribe(heatData => {
           this.combinedMovementMap.setData({
