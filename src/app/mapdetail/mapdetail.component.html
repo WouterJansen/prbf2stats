@@ -13,10 +13,10 @@
                   <th scope="col"></th>
                   <th scope="col"># played</th>
                   <th scope="col">Avg. duration</th>
-                  <th scope="col">Avg. tickets team 1</th>
-                  <th scope="col">Avg. tickets team 2</th>
-                  <th scope="col"># wins team 1</th>
-                  <th scope="col"># wins team 2</th>
+                  <th scope="col">Avg. tickets Opfor</th>
+                  <th scope="col">Avg. tickets Blufor</th>
+                  <th scope="col"># wins team Opfor</th>
+                  <th scope="col"># wins team Blufor</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -76,6 +76,7 @@
     </mat-card-content>
   </mat-card>
   <h2 class="mat-display-1">Heatmaps</h2>
+  <h3 class="subheading-2">Selection</h3>
     <mat-form-field>
       <mat-select placeholder="Version" [(value)]="selectedVersion">
         <ng-template ngFor let-version [ngForOf]="versionList" let-i="index">
@@ -107,6 +108,8 @@
         </ng-template>
       </mat-select>
     </mat-form-field>
-    <h3 class="subheading-2">Locations</h3>
+    <h3 class="subheading-2">Legend</h3>
+    <img class="legend" src="../assets/legend.png">
+    <h3 class="subheading-2">Time spend on location</h3>
     <div class="combinedMovementMap" id="combinedMovementMap" [ngStyle]="{'background-image': 'url(' + mapImageURL + ')'}"></div>
 </div>

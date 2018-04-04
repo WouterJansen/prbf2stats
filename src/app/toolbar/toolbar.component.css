@@ -73,3 +73,9 @@
   -webkit-font-feature-settings: 'liga';
   -webkit-font-smoothing: antialiased;
 }
+
+.wipcard{
+  padding-top: 70px;
+  padding-bottom: 5px;
+  background-color: #ff545d;
+}
