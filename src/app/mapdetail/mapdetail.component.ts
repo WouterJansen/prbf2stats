@@ -14,7 +14,7 @@ export class MapDetailComponent implements OnInit, AfterViewInit {
   statistics = [];
   mapName: string;
   versionList = [];
-  pageTitle = 'Map Details';
+  pageTitle = 'Detailed Map Statistics';
   pageSubtitle = 'mapname';
   pageArrow = true;
   pageLink = '/statistics/maps';
