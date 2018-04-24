@@ -111,5 +111,8 @@
     <h3 class="subheading-2">Legend</h3>
     <img class="legend" src="../assets/legend.png">
     <h3 class="subheading-2">Time spend on location</h3>
-    <div class="combinedMovementMap" id="combinedMovementMap" [ngStyle]="{'background-image': 'url(' + mapImageURL + ')'}"></div>
+  <div class="img-container">
+    <img class="topCombinedMovementMap" [src]='combinedMovementImageURL' alt="">
+    <img class="bottomMap" [src]='mapImageURL' alt="">
+  </div>
 </div>

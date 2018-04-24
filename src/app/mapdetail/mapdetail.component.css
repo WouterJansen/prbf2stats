@@ -42,3 +42,12 @@ th {
 .legend{
   margin: 10px;
 }
+
+.img-container { position: relative; }
+
+.img-container .topCombinedMovementMap {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}

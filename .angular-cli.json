@@ -10,8 +10,7 @@
       "assets": [
         "assets",
         "favicon.ico",
-        "data/",
-        "heatmap.min.js"
+        "data/"
       ],
       "index": "index.html",
       "main": "main.ts",

@@ -1,15 +1,13 @@
-import { Component, OnInit, AfterViewInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import {Component, OnInit} from '@angular/core';
+import {ActivatedRoute} from '@angular/router';
 import {MapService} from '../map.service';
-
-declare const h337: any;
 
 @Component({
   selector: 'app-mapdetail',
   templateUrl: './mapdetail.component.html',
   styleUrls: ['./mapdetail.component.css']
 })
-export class MapDetailComponent implements OnInit, AfterViewInit {
+export class MapDetailComponent implements OnInit {
 
   statistics = [];
   mapName: string;
@@ -19,7 +17,7 @@ export class MapDetailComponent implements OnInit, AfterViewInit {
   pageArrow = true;
   pageLink = '/statistics/maps';
   mapImageURL;
-  combinedMovementMap;
+  combinedMovementImageURL;
   selectedVersion = 'none';
   selectedGameMode = 'none';
   selectedLayer = 'none';
@@ -28,21 +26,6 @@ export class MapDetailComponent implements OnInit, AfterViewInit {
   constructor(private route: ActivatedRoute, private mapService: MapService) {
 
   }
-
-  ngAfterViewInit() {
-
-    this.combinedMovementMap = h337.create({
-      container: window.document.querySelector('#combinedMovementMap'),
-      radius: 2,
-    });
-    const data = {
-      max: 0.25,
-      min: 0,
-      data: [ ]
-    };
-    this.combinedMovementMap.setData(data);
-  }
-
 
   ngOnInit() {
     this.mapName = this.route.snapshot.paramMap.get('mapName');
@@ -76,51 +59,26 @@ export class MapDetailComponent implements OnInit, AfterViewInit {
     if (this.selectedRoute === 'none') {
       if (this.selectedLayer === 'none') {
         if (this.selectedGameMode === 'none') {
-          this.mapService.getHeatData(this.versionList[this.selectedVersion] + '/' + this.mapName + '/combinedmovement.json')
-            .subscribe(heatData => {
-              this.combinedMovementMap.setData({
-                data: heatData
-              });
-              this.combinedMovementMap.setDataMin(0.03);
-              this.combinedMovementMap.setDataMax(0.25);
-            });
+          this.combinedMovementImageURL =
+            './data/' + this.versionList[this.selectedVersion] + '/' + this.mapName + '/combinedmovement.png';
         } else {
-          this.mapService.getHeatData(this.versionList[this.selectedVersion] + '/' + this.mapName + '/combinedmovement_' +
-            this.statistics[this.selectedVersion].gameModes[this.selectedGameMode].name + '.json')
-            .subscribe(heatData => {
-              this.combinedMovementMap.setData({
-                data: heatData
-              });
-              this.combinedMovementMap.setDataMin(0.03);
-              this.combinedMovementMap.setDataMax(0.25);
-
-            });
+          this.combinedMovementImageURL =
+            './data/' + this.versionList[this.selectedVersion] + '/' + this.mapName + '/combinedmovement_' +
+            this.statistics[this.selectedVersion].gameModes[this.selectedGameMode].name + '.png';
         }
       } else {
-        this.mapService.getHeatData(this.versionList[this.selectedVersion] + '/' + this.mapName + '/combinedmovement_' +
+        this.combinedMovementImageURL =
+          './data/' + this.versionList[this.selectedVersion] + '/' + this.mapName + '/combinedmovement_' +
           this.statistics[this.selectedVersion].gameModes[this.selectedGameMode].name + '_' +
-          this.statistics[this.selectedVersion].gameModes[this.selectedGameMode].layers[this.selectedLayer].name + '.json')
-          .subscribe(heatData => {
-            this.combinedMovementMap.setData({
-              data: heatData
-            });
-            this.combinedMovementMap.setDataMin(0.03);
-            this.combinedMovementMap.setDataMax(0.25);
-          });
+          this.statistics[this.selectedVersion].gameModes[this.selectedGameMode].layers[this.selectedLayer].name + '.png';
       }
     } else {
-      this.mapService.getHeatData(this.versionList[this.selectedVersion] + '/' + this.mapName + '/combinedmovement_' +
+      this.combinedMovementImageURL =
+        './data/' + this.versionList[this.selectedVersion] + '/' + this.mapName + '/combinedmovement_' +
         this.statistics[this.selectedVersion].gameModes[this.selectedGameMode].name + '_' +
         this.statistics[this.selectedVersion].gameModes[this.selectedGameMode].layers[this.selectedLayer].name + '_' +
         this.statistics[this.selectedVersion].gameModes[this.selectedGameMode].layers[this.selectedLayer].routes[this.selectedRoute].id +
-        '.json')
-        .subscribe(heatData => {
-          this.combinedMovementMap.setData({
-            data: heatData
-          });
-          this.combinedMovementMap.setDataMin(0.03);
-          this.combinedMovementMap.setDataMax(0.25);
-        });
+        '.png';
     }
   }
 }
